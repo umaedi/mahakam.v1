@@ -1,0 +1,52 @@
+@media screen and (max-width: 1024px) {
+  div.carousel .carousel-inner .carousel-item img {
+    width: 100%;
+    min-height: 100vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  div.container .bupati img {
+    width: 50%;
+  }
+  div.container .wakil-bupati img {
+    width: 50%;
+    margin-left: 45%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  div.st2-slide-content {
+    color: #fff;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: normal;
+    display: inline-block;
+    width: 100%;
+  }
+  div.st2-slide-content .st2-slide-title {
+    font-size: 14px;
+  }
+  div.st2-slide-content .st2-slide-title .welcome {
+    font-size: 20px;
+  }
+  div.st2-slide-content .sub-welcome {
+    font-size: 14px;
+  }
+  div.st2-slide-content .minor-sub {
+    font-size: 14px;
+  }
+  div.arrow {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  div.layanan-mobile {
+    width: 100%;
+  }
+}

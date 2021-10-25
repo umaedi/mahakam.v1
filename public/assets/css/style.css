@@ -1,0 +1,97 @@
+:root {
+  --mainColor: #ff6600;
+  --secondariColor: #ff9933;
+  --accesenColor: #fff;
+}
+
+div.carousel {
+  width: 100%;
+}
+div.carousel .carousel-inner .carousel-item img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+div.bupati img {
+  position: absolute;
+  top: 12%;
+  left: 2%;
+  display: inline-block;
+  width: 350px;
+}
+
+div.wakil-bupati img {
+  position: absolute;
+  top: 12%;
+  margin-left: 19%;
+  display: inline-block;
+  width: 350px;
+}
+
+div.st2-slide-content {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+div.st2-slide-content .st2-slide-title {
+  letter-spacing: 2px;
+}
+
+div.st2-slide-content .slogan {
+  font-size: 12px;
+}
+div.st2-slide-content .welcome {
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+div.st2-slide-content .fa-angle-double-down {
+  animation: bounce 1s infinite;
+  -webkit-animation: bounce 1s infinite;
+}
+
+div.img-shadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+div.box-item-image {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  overflow: hidden;
+}
+
+div.card-body .card-text {
+  color: #333333;
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+div.card-body .btn-custom {
+  color: #fff;
+  background-color: #4472c4 !important;
+}
+
+div.box-item-image:hover a {
+  color: #006838 !important;
+}
+
+div.box-item-image img {
+  width: 100%;
+  height: auto;
+  transition: 0.5s;
+}
+
+div.box-item-image:hover img {
+  transform: scale(1.05);
+}

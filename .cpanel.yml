@@ -1,0 +1,14 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/u1534957/mahakam.v1/
+    - /bin/cp -R app $DEPLOYPATH
+    - /bin/cp -R public $DEPLOYPATH
+    - /bin/cp -R system $DEPLOYPATH
+    - /bin/cp -R writable $DEPLOYPATH
+    - /bin/cp .gitignore $DEPLOYPATH
+    - /bin/cp composer.json $DEPLOYPATH
+    - /bin/cp license.txt $DEPLOYPATH
+    - /bin/cp phpunit.xml.dist $DEPLOYPATH
+    - /bin/cp README.md $DEPLOYPATH
+    - /bin/cp readme.rst $DEPLOYPATH

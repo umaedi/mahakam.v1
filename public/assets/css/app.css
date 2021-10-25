@@ -1,0 +1,282 @@
+:root {
+  --mainColor: #ff6600;
+  --secondariColor: #ff9933;
+  --accesenColor: #fff;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+nav {
+  transition: 500ms;
+}
+
+nav.navbar-bg {
+  background-color: var(--accesenColor) !important;
+}
+nav.navbar .navbar-nav .nav-link {
+  color: #222;
+}
+nav.navbar .navbar-nav .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #4472c4;
+  transition: width 0.3s;
+}
+
+nav.navbar .navbar-nav .nav-link:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+div.bg-content {
+  background-color: #4472c4;
+  border-radius: 3px;
+  height: 280px;
+}
+
+div.bg-content .text-content {
+  color: #fff;
+  padding: 10px 15px;
+}
+
+div.bg-content .text-content a {
+  color: #fff;
+}
+.footer {
+  position: relative;
+  overflow: hidden;
+  background-color: #f3f3f3;
+}
+.footer .footer-content {
+  margin: 20px 0;
+  padding: 0 20px;
+}
+.text-poppins {
+  color: #4472c4;
+}
+.text-gold {
+  color: #4472c4;
+}
+
+.information {
+  height: auto;
+  width: 100%;
+}
+
+div.contact {
+  background-color: #4472c4;
+}
+
+div.contact .main .item p {
+  color: #fff;
+}
+
+.information .main {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  justify-content: space-between;
+  margin: auto;
+  padding: 50px 0;
+  position: relative;
+  width: 1100px;
+}
+
+.information .main h2.brand-footer {
+  color: #4472c4;
+}
+
+.information .main .about {
+  box-sizing: border-box;
+  padding-right: 30px;
+  width: 400px;
+}
+
+.information .main .about img.logo {
+  width: 170px;
+}
+
+.information .main .about p {
+  color: #555;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.information .main .about .sosmed {
+  margin-top: 15px;
+}
+
+.information .main .about .sosmed h3 {
+  color: #222;
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.information .main .about .sosmed a {
+  color: #555;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.information .main .about .sosmed a:hover {
+  color: #009479;
+}
+
+.about-for-mobile {
+  display: none;
+  position: relative;
+  margin: auto;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  width: 85%;
+}
+
+.about-for-mobile h2.brand-footer {
+  color: #4472c4;
+  font-size: 27px;
+}
+
+.about-for-mobile img.logo {
+  width: 170px;
+}
+
+.about-for-mobile p {
+  color: #555;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.about-for-mobile .sosmed {
+  margin-top: 15px;
+}
+
+.about-for-mobile .sosmed h3 {
+  color: #222;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.about-for-mobile .sosmed a {
+  color: #555;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.about-for-mobile .sosmed a:hover {
+  color: #4472c4;
+}
+
+.information .main h3.title {
+  color: #222;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.information .main .item a,
+.information .main .item p {
+  color: #555;
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 7px 0;
+}
+
+.information .main .item a:hover {
+  color: #4472c4;
+  margin-left: 3px;
+  transition: all 0.5s ease 0s;
+}
+
+.information-for-mobile {
+  display: none;
+}
+
+.contact {
+  border-top: 1px solid #ddd;
+  height: 150px;
+  width: 100%;
+}
+
+.contact .main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: space-around;
+  margin: auto;
+  position: relative;
+  width: 1200px;
+}
+
+.contact .main .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 300px;
+}
+
+.contact .main .item i {
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+}
+
+.contact .main .item p {
+  color: #444;
+  font-size: 15px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.copyright {
+  background-color: #3768bf;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  justify-content: center;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+}
+
+.copyright p {
+  color: #eee;
+  font-size: 13px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+}
+
+#back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 55px;
+  right: 25px;
+  font-size: 26px;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  color: #3768bf;
+  cursor: pointer;
+  outline: none;
+  border: 3px solid #3768bf;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: background-color, color;
+}
