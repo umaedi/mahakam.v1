@@ -45,7 +45,7 @@
         </div>
     </div>
     <div class="row justify-content-center mb-5">
-        <div class="col-10">
+        <div class="col-8">
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
                     <div class="card box-item-image" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
@@ -120,73 +120,75 @@
                     </div>
                 </div>
             </div>
-            <div class=" row justify-content-center mt-5">
-                <div class="col-lg-3 col-md-3 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="100">
-                    <div class="bg-content">
-                        <div class="text-content">
-                            <h6 class="fw-bold text-center">Profil</h6>
-                            <hr>
-                            <ul>
-                                <li>
-                                    <a href="">Kata Pengantar</a>
-                                </li>
-                                <li>
-                                    <a href="">Struktur Organisasi</a>
-                                </li>
-                                <li>
-                                    <a href="">Tugas Pokok & Fungsi Bagian</a>
-                                </li>
-                                <a href="">Tugas Pokok & Fungsi Bagian Pemerintahan</a>
-                                <li>
-                                    <a href="">Kontak Kami</a>
-                                </li>
+        </div>
+        <div class=" row justify-content-center mt-5">
+            <div class="col-lg-4 col-md-4 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="100">
+                <div class="bg-content">
+                    <div class="text-content">
+                        <h6 class="fw-bold text-center">Profil</h6>
+                        <hr>
+                        <ul>
+                            <li>
+                                <a href="">Kata Pengantar</a>
+                            </li>
+                            <li>
+                                <a href="">Struktur Organisasi</a>
+                            </li>
+                            <li>
+                                <a href="">Tugas Pokok & Fungsi Bagian</a>
+                            </li>
+                            <a href="">Tugas Pokok & Fungsi Bagian Pemerintahan</a>
+                            <li>
+                                <a href="">Kontak Kami</a>
+                            </li>
 
-                            </ul>
-                        </div>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="250">
-                    <div class="bg-content">
-                        <div class="text-content">
-                            <h6 class="fw-bold text-center">Layanan</h6>
-                            <hr>
-                            <ul>
-                                <li>
-                                    <a href="">SIKDAD</a>
-                                </li>
-                                <li>
-                                    <a href="">E-ELPPD</a>
-                                </li>
-                            </ul>
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="250">
+                <div class="bg-content">
+                    <div class="text-content">
+                        <h6 class="fw-bold text-center">Layanan</h6>
+                        <hr>
+                        <ul>
+                            <li>
+                                <a href="">SIKDAD</a>
+                            </li>
+                            <li>
+                                <a href="">E-ELPPD</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="350">
-                    <div class="bg-content">
-                        <div class="text-content">
-                            <h6 class="fw-bold text-center">Agenda</h6>
-                            <hr>
-                            <a href="">Belum ada agenda</a>
-                        </div>
+            </div>
+        </div>
+        <div class=" row justify-content-center mt-5">
+            <div class="col-lg-4 col-md-4 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="350">
+                <div class="bg-content">
+                    <div class="text-content">
+                        <h6 class="fw-bold text-center">Agenda</h6>
+                        <hr>
+                        <a href="">Belum ada agenda</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="450">
-                    <div class="bg-content">
-                        <div class="text-content">
-                            <h6 class="fw-bold text-center">Download</h6>
-                            <hr>
-                            <ul>
-                                <li>
-                                    <a href="">Adm. KD & DPRD</a>
-                                </li>
-                                <li>
-                                    <a href="">LPPDRLPPD</a>
-                                </li>
-                                <li>
-                                    <a href="">SPM</a>
-                                </li>
-                            </ul>
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="450">
+                <div class="bg-content">
+                    <div class="text-content">
+                        <h6 class="fw-bold text-center">Download</h6>
+                        <hr>
+                        <ul>
+                            <li>
+                                <a href="">Adm. KD & DPRD</a>
+                            </li>
+                            <li>
+                                <a href="">LPPDRLPPD</a>
+                            </li>
+                            <li>
+                                <a href="">SPM</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
