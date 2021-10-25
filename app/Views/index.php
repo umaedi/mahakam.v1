@@ -52,8 +52,11 @@
                         <a href="" id="construction2">
                             <img data-src=" <?= base_url(); ?>/assets/img/layanan/layanan1.jpg" class="lazyload card-img-top" alt="bupati mahakam">
                             <div class="card-body">
-                                <h5 class="card-title">Lorem</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <h5 class="card-title">LOREM IPSUM IS DUMY TEXT</h5>
+                                <p class="card-text"><i class="far fa-clock"></i> Pukul : <?= date('h:i'); ?> WIB</p>
+                                <p class="card-text"><i class="far fa-calendar-alt"></i> <?= date('m-Y'); ?> - </i> <?= date('m-Y'); ?></p>
+                                <p class="card-text"><i class="fas fa-map-marker-alt"></i> di Bandar Lampung</p>
+                                <p class="card-text"><i class="fas fa-file-pdf"></i></i> Not available</p>
                                 <button class="btn btn-sm btn-custom float-end mb-3">Selengkapnya</button>
                             </div>
                         </a>
@@ -64,8 +67,11 @@
                         <a href="" id="construction3">
                             <img data-src=" <?= base_url(); ?>/assets/img/layanan/layanan3.jpg" class="card-img-top lazyload" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Lorem</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <h5 class="card-title">LOREM IPSUM IS DUMY TEXT</h5>
+                                <p class="card-text"><i class="far fa-clock"></i> Pukul : <?= date('h:i'); ?> WIB</p>
+                                <p class="card-text"><i class="far fa-calendar-alt"></i> <?= date('m-Y'); ?> - </i> <?= date('m-Y'); ?></p>
+                                <p class="card-text"><i class="fas fa-map-marker-alt"></i> di Bandar Lampung</p>
+                                <p class="card-text"><i class="fas fa-file-pdf"></i></i> Not available</p>
                                 <button class="btn btn-sm btn-custom float-end mb-3">Selengkapnya</button>
                             </div>
                         </a>
@@ -76,8 +82,11 @@
                         <a href="" id="construction4">
                             <img data-src="<?= base_url(); ?>/assets/img/layanan/layanan2.jpg" class="card-img-top lazyload" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Lorem</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <h5 class="card-title">LOREM IPSUM IS DUMY TEXT</h5>
+                                <p class="card-text"><i class="far fa-clock"></i> Pukul : <?= date('h:i'); ?> WIB</p>
+                                <p class="card-text"><i class="far fa-calendar-alt"></i> <?= date('m-Y'); ?> - </i> <?= date('m-Y'); ?></p>
+                                <p class="card-text"><i class="fas fa-map-marker-alt"></i> di Bandar Lampung</p>
+                                <p class="card-text"><i class="fas fa-file-pdf"></i></i> Not available</p>
                                 <button class="btn btn-sm btn-custom float-end mb-3">Selengkapnya</button>
                             </div>
                         </a>
@@ -88,8 +97,11 @@
                         <a href="" id="construction5">
                             <img data-src="<?= base_url(); ?>/assets/img/layanan/layanan4.jpg" class="card-img-top lazyload" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Lorem</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <h5 class="card-title">LOREM IPSUM IS DUMY TEXT</h5>
+                                <p class="card-text"><i class="far fa-clock"></i> Pukul : <?= date('h:i'); ?> WIB</p>
+                                <p class="card-text"><i class="far fa-calendar-alt"></i> <?= date('m-Y'); ?> - </i> <?= date('m-Y'); ?></p>
+                                <p class="card-text"><i class="fas fa-map-marker-alt"></i> di Bandar Lampung</p>
+                                <p class="card-text"><i class="fas fa-file-pdf"></i></i> Not available</p>
                                 <button class="btn btn-sm btn-custom float-end mb-3">Selengkapnya</button>
                             </div>
                         </a>
@@ -100,8 +112,11 @@
                         <a href="" id="construction6">
                             <img data-src="<?= base_url(); ?>/assets/img/layanan/layanan6.jpg" class="card-img-top lazyload" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Lorem</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <h5 class="card-title">LOREM IPSUM IS DUMY TEXT</h5>
+                                <p class="card-text"><i class="far fa-clock"></i> Pukul : <?= date('h:i'); ?> WIB</p>
+                                <p class="card-text"><i class="far fa-calendar-alt"></i> <?= date('m-Y'); ?> - </i> <?= date('m-Y'); ?></p>
+                                <p class="card-text"><i class="fas fa-map-marker-alt"></i> di Bandar Lampung</p>
+                                <p class="card-text"><i class="fas fa-file-pdf"></i></i> Not available</p>
                                 <button class="btn btn-sm btn-custom float-end mb-3">Selengkapnya</button>
                             </div>
                         </a>
@@ -112,16 +127,37 @@
                         <a href="" id="construction7">
                             <img data-src="<?= base_url(); ?>/assets/img/layanan/layanan5.jpg" class="card-img-top lazyload" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">Lorem</h5>
-                                <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <h5 class="card-title">LOREM IPSUM IS DUMY TEXT</h5>
+                                <p class="card-text"><i class="far fa-clock"></i> Pukul : <?= date('h:i'); ?> WIB</p>
+                                <p class="card-text"><i class="far fa-calendar-alt"></i> <?= date('m-Y'); ?> - </i> <?= date('m-Y'); ?></p>
+                                <p class="card-text"><i class="fas fa-map-marker-alt"></i> di Bandar Lampung</p>
+                                <p class="card-text"><i class="fas fa-file-pdf"></i></i> Not available</p>
                                 <button class="btn btn-sm btn-custom float-end mb-3">Selengkapnya</button>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class=" row justify-content-center mt-5">
+        <div class=" row justify-content-center mt-3">
             <div class="col-lg-4 col-md-4 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="100">
                 <div class="bg-content">
                     <div class="text-content">
@@ -163,7 +199,7 @@
                 </div>
             </div>
         </div>
-        <div class=" row justify-content-center mt-5">
+        <div class=" row justify-content-center mt-3">
             <div class="col-lg-4 col-md-4 col-sm-6 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="350">
                 <div class="bg-content">
                     <div class="text-content">
