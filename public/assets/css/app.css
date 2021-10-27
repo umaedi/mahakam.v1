@@ -39,20 +39,23 @@ nav.navbar .navbar-nav .nav-link:hover::after {
 }
 
 div.bg-content {
-  background-color: #4472c4;
+  background-color: #e2ccc9;
   border-radius: 3px;
   height: 280px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 div.bg-content .text-content {
-  color: #fff;
+  color: #222;
   padding: 10px 15px;
 }
-
-div.bg-content .text-content a {
-  color: #fff;
+div.bg-content .text-content h6 {
+  color: #222;
 }
+div.bg-content .text-content a {
+  color: #222;
+}
+
 .footer {
   position: relative;
   overflow: hidden;

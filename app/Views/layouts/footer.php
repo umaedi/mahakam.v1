@@ -1,7 +1,7 @@
 <footer>
     <div class="container" data-aos="fade-down" data-aos-duration="1000" data-aos-offset="100">
         <div class="row justify-content-center mb-5">
-            <div class="col-10">
+            <div class="col">
                 <h4 class="text-center">Alamat Kantor Sekretariat Kabinet Mahulu</h4>
                 <hr class="garis-layanan">
                 <div class="embed-responsive text-center">
