@@ -14,7 +14,7 @@
                         <h5 class="card-text name ">Bonifasius Belawan Geh, SH</h5>
                         <h5 class="text-center">Bupati Mahakam Ulu</h5>
                         <hr>
-                        <p class="text-italic text-center">Motto<br>“Orang Lain Bisa, Saya Harus Bisa”(dalam segi Positif)"</p>
+                        <p class="text-italic text-center"><span class="fw-bold">Motto</span><br>“Orang Lain Bisa, Saya Harus Bisa”(dalam segi Positif)"</p>
                     </div>
                 </div>
             </div>

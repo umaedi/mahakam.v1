@@ -42,7 +42,7 @@
     <!-- view content -->
     <?= $this->include('layouts/navbar'); ?>
     <?= $this->renderSection('content'); ?>
-    <?= $this->include('layouts/footer'); ?>
+    <?= $this->include('layouts/footerv2'); ?>
 
 
 

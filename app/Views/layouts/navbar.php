@@ -9,7 +9,19 @@
            <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav ms-auto">
                    <li class="nav-item me-4">
-                       <a class="nav-link active fw-bold" aria-current="page" href="#">Profil</a>
+                       <a class="nav-link fw-bold" href="<?= base_url(); ?>">Beranda</a>
+                       <div class="animation start-home"></div>
+                   </li>
+                   <li class="nav-item me-4">
+                       <div class="dropdown ">
+                           <a class="nav-link fw-bold fw-bold" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                               <span class="dropdown-toggle">Profil</span>
+                           </a>
+                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                               <li><a class="dropdown-item" href="<?= base_url(); ?>/biografi/bupati">Bupati</a></li>
+                               <li><a class="dropdown-item" href="#">Wakil Bupati</a></li>
+                           </ul>
+                       </div>
                    </li>
                    <li class="nav-item me-4">
                        <a class="nav-link fw-bold" href="#">Layanan</a>
