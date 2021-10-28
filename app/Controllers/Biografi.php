@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 class Biografi extends BaseController
 {
-    public function biografi()
+    public function bupati()
     {
-        return view('biografi/index');
+        return view('biografi/bupati');
     }
     //--------------------------------------------------------------------
 

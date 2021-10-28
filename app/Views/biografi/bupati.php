@@ -9,10 +9,12 @@
                     <div class="col">
                         <h5 class="card text-white bg-success py-2 text-center mb-3">PERIODE 2021-2024</h5>
                     </div>
-                    <img src="<?= base_url(); ?>/assets/img/bupati/bupati.jpg" class="card-img-top rounded-circle" alt="...">
+                    <img data-src="<?= base_url(); ?>/assets/img/bupati/bupati.jpg" class="lazyload card-img-top rounded-circle" alt="...">
                     <div class="card-body">
                         <h5 class="card-text name ">Bonifasius Belawan Geh, SH</h5>
                         <h5 class="text-center">Bupati Mahakam Ulu</h5>
+                        <hr>
+                        <p class="text-italic text-center">Motto<br>“Orang Lain Bisa, Saya Harus Bisa”(dalam segi Positif)"</p>
                     </div>
                 </div>
             </div>
