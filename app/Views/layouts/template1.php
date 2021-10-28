@@ -41,7 +41,6 @@
     <div class="fakeLoader"></div>
     <!-- view content -->
     <?= $this->include('layouts/navbar'); ?>
-    <?= $this->include('layouts/banner'); ?>
     <?= $this->renderSection('content'); ?>
     <?= $this->include('layouts/footer'); ?>
 
@@ -60,17 +59,6 @@
         $.fakeLoader({
             spinner: 'spinner4',
             bgColor: '#fff'
-        });
-
-        // Scroll bar
-        $(document).ready(function() {
-            $(window).on('scroll', function() {
-                if ($(window).scrollTop() > 80) {
-                    $("nav").addClass('navbar-bg');
-                } else {
-                    $("nav").removeClass('navbar-bg');
-                }
-            });
         });
 
         // Aos

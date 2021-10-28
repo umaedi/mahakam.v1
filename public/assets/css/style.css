@@ -95,3 +95,41 @@ div.box-item-image img {
 div.box-item-image:hover img {
   transform: scale(1.05);
 }
+
+section.pejabat {
+  margin-top: 120px;
+}
+div.periode {
+  background-color: #fff;
+  border-radius: 5px;
+}
+div.periode h1 {
+  margin: 0;
+}
+div.data-diri {
+  background-color: #fff;
+  border-radius: 5px;
+}
+.pejabat .title h1 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 32px;
+}
+
+.pejabat .name {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+}
+.nav-link {
+  color: #222;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #1c9f49;
+  color: #fff;
+}
+.nav-tabs .nav-link:hover {
+  background-color: #1c9f49 !important;
+  color: #fff;
+}

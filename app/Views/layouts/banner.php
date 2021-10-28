@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 com-sm-12">
                 <div class="bupati">
-                    <a href="#">
+                    <a href="<?= base_url(); ?>/biografi">
                         <img src="<?= base_url(); ?>/assets/img/banner/bupati-mahakam.png" loading="lazy" class="lazyload">
                     </a>
                 </div>
