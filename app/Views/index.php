@@ -11,10 +11,10 @@
         <div class="row">
             <div class="col-10 offset-1">
                 <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-                    <div class="col-lg-3 col-md-5 col-sm-5" id="construction">
+                    <div class="col-lg-3 col-md-5 col-sm-5">
                         <div class="icon-user" data-bs-toggle="tooltip" data-bs-placement="left" title="Sistem Informasi Administrasi Kepala Daerah & DPRD">
                             <div class=" card box-item-image" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
-                                <a href="">
+                                <a href="<?= base_url(); ?>/administrator">
                                     <img data-src=" <?= base_url(); ?>/assets/img/layanan/user.jpg" class="lazyload card-img-top" alt="bupati mahakam" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5>SIKDAD</h5>
