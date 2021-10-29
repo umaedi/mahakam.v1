@@ -32,7 +32,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/biografi/(:segment)', 'Biografi::bupati/$1');
+$routes->get('/biografi', 'Biografi::bupati');
+$routes->get('/agenda', 'Agenda::index');
 
 /**
  * --------------------------------------------------------------------

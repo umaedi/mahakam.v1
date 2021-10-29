@@ -11,10 +11,9 @@
                     </div>
                     <img data-src="<?= base_url(); ?><?= $img; ?>" class="lazyload card-img-top rounded-circle" alt="...">
                     <div class="card-body">
-                        <h5 class="card-text name ">Bonifasius Belawan Geh, SH</h5>
-                        <h5 class="text-center">Bupati Mahakam Ulu</h5>
+                        <h5 class="card-text name "><?= $nama; ?></h5>
+                        <h5 class="text-center"><?= $jabatan; ?></h5>
                         <hr>
-                        <p class="text-italic text-center"><span class="fw-bold">Motto</span><br><?= $motto; ?></p>
                     </div>
                 </div>
             </div>
@@ -70,9 +69,6 @@
                                     <div class="col-sm-9">
                                         <p>: <?= $anak[0]; ?></p>
                                         <p>: <?= $anak[1]; ?></p>
-                                        <p>: <?= $anak[2]; ?></p>
-                                        <p>: <?= $anak[3]; ?></p>
-                                        <p>: <?= $anak[4]; ?></p>
                                     </div>
                                 </div>
                             </table>
@@ -104,6 +100,12 @@
                                     <div class="col-sm-9">
                                         <p>: <?= $kuliah; ?></p>
                                     </div>
+                                    <div class="col-sm-3">
+                                        <p>Pasca</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p>: <?= $pasca; ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +128,7 @@
                                         <p><?= $karir3[0]; ?></p>
                                     </div>
                                     <div class="col-sm-10">
-                                        <p>: ><?= $karir3[1]; ?></p>
+                                        <p>: <?= $karir3[1]; ?></p>
                                     </div>
                                     <div class="col-sm-2">
                                         <p><?= $karir4[0]; ?></p>

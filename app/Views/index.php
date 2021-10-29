@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 <div class="container">
-    <div class="row mt-5 mb-2 justify-content-center" data-aos="fade-down" data-aos-duration="1000" data-aos-offset="100">
+    <div class="row mt-5 mb-2 justify-content-center" data-aos="fade-left" data-aos-duration="1000" data-aos-offset="100">
         <div class="col-12 layanan">
             <h5 class="text-center head-title" id="layanan">LAYANAN</h5>
         </div>
@@ -15,7 +15,7 @@
                         <div class="icon-user" data-bs-toggle="tooltip" data-bs-placement="left" title="Sistem Informasi Administrasi Kepala Daerah & DPRD">
                             <div class=" card box-item-image" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
                                 <a href="">
-                                    <img data-src=" <?= base_url(); ?>/assets/img/layanan/user.jpg" class="lazyload card-img-top" alt="bupati mahakam" width="20%" class="card-img-top" alt="...">
+                                    <img data-src=" <?= base_url(); ?>/assets/img/layanan/user.jpg" class="lazyload card-img-top" alt="bupati mahakam" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5>SIKDAD</h5>
                                     </div>
@@ -39,14 +39,14 @@
             </div>
         </div>
     </div>
-    <div class="row mt-5 mb-2 justify-content-center" data-aos="fade-down" data-aos-duration="1000" data-aos-offset="100">
+    <div class="row mt-5 mb-2 justify-content-center" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="100">
         <div class="col-12 layanan">
             <h5 class="text-center">AGENDA TERBARU</h5>
         </div>
     </div>
     <div class="row">
         <div class="col-6">
-            <div class="card img-shadow mb-3" style="max-width: 540px;">
+            <div class="card img-shadow mb-3" data-aos="fade-right" data-aos-duration="1100" data-aos-offset="100" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="<?= base_url(); ?>/assets/img/layanan/coba.jpg" class="img-fluid rounded-start" alt="...">
@@ -57,14 +57,14 @@
                             <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark">PCR</span> / <i class="far fa-clock"></i> / <?= date('d F Y'); ?></small></p>
                             <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> Bandar Lampung</small></p>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="submit" class="btn btn-sm btn-success">Selengkapnya</button>
+                            <button type="submit" class="btn btn-sm btn-success">Baca selengkapnya</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-6">
-            <div class="card mb-3 img-shadow" style="max-width: 540px;">
+            <div class="card mb-3 img-shadow" data-aos="fade-left" data-aos-duration="1100" data-aos-offset="100" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="<?= base_url(); ?>/assets/img/layanan/coba2.jpg" class="img-fluid rounded-start" alt="...">
@@ -75,7 +75,7 @@
                             <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark">Vaksin</span> / <i class="far fa-clock"></i> / <?= date('d F Y'); ?></small></p>
                             <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> Bandar Lampung</small></p>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="submit" class="btn btn-sm btn-success">Selengkapnya</button>
+                            <button type="submit" class="btn btn-sm btn-success">Baca selengkapnya</button>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
     <div class="container">
         <div class="row text-center my-3">
             <div class="col">
-                <button type="submit" class="btn btn-sm btn-success">Selengkapnya <i class="fas fa-arrow-right"></i></button>
+                <a href="<?= base_url(); ?>/agenda"><button type="submit" class="btn btn-sm btn-success">Lihat selengkapnya <i class="fas fa-arrow-right"></i></button></a>
             </div>
         </div>
     </div>

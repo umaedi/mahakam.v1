@@ -19,7 +19,7 @@
                            </a>
                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                <li><a class="dropdown-item" href="<?= base_url(); ?>/biografi/bupati">Bupati</a></li>
-                               <li><a class="dropdown-item" href="#">Wakil Bupati</a></li>
+                               <li><a class="dropdown-item" href="<?= base_url(); ?>/biografi/wakil">Wakil Bupati</a></li>
                            </ul>
                        </div>
                    </li>

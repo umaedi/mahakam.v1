@@ -15,8 +15,8 @@
             </div>
             <div class="col-lg-6 col-md-6 com-sm-12">
                 <div class="wakil-bupati">
-                    <a href="#">
-                        <img src="<?= base_url(); ?>/assets/img/banner/wakil-bupati.png" loading="lazy" class="lazyload">
+                    <a href="<?= base_url(); ?>/biografi/wakil"">
+                        <img src=" <?= base_url(); ?>/assets/img/banner/wakil-bupati.png" loading="lazy" class="lazyload">
                     </a>
                 </div>
             </div>
