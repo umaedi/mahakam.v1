@@ -33,7 +33,7 @@
     <div class="copyright">
         <p class="">Copyright &copy; <span id="footer-cr-years"></span><?= date('Y'); ?>. All Right Reserved. Developed by Newus</p>
     </div>
-    <button id="back-to-top-btn"><i class="fas fa-angle-double-up"></i></button>
+    <button id="back-to-top-btn"><i class="fas fa-angle-up"></i></button>
 </footer>
 
 <script>
@@ -69,7 +69,7 @@
         const targetPosition = 0;
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
-        const duration = 750;
+        const duration = 10;
         let start = null;
 
         window.requestAnimationFrame(step);

@@ -93,72 +93,73 @@
         <div class="col-md-3 col-sm-3 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="100">
             <div class="bg-content">
                 <div class="text-content">
-                    <h6 class="fw-bold text-center">Profil</h6>
+                    <h6 class="fw-bold ms-3"><i class="fas fa-users"></i> Profil</h6>
                     <hr>
-                    <ul>
+                    <div class="ms-3">
                         <li>
-                            <a href="">Kata Pengantar</a>
+                            <a class="text-border" href="">Kata Pengantar</a>
                         </li>
                         <li>
-                            <a href="">Struktur Organisasi</a>
+                            <a class="text-border" href="">Struktur Organisasi</a>
                         </li>
                         <li>
-                            <a href="">Tugas Pokok & Fungsi Bagian</a>
+                            <a class="text-border" href="">Tugas Pokok & Fungsi Bagian Pemerintahan</a>
                         </li>
-                        <a href="">Tugas Pokok & Fungsi Bagian Pemerintahan</a>
                         <li>
-                            <a href="">Kontak Kami</a>
+                            <a class="text-border" href="">Kontak Kami</a>
                         </li>
-
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-sm-3 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="250">
             <div class="bg-content">
                 <div class="text-content">
-                    <h6 class="fw-bold text-center">Layanan</h6>
+                    <h6 class="fw-bold ms-3"><i class="fas fa-chalkboard-teacher"></i> Layanan</h6>
                     <hr>
-                    <ul>
+                    <div class="ms-3">
                         <li>
-                            <a href="">SIKDAD</a>
+                            <a class="text-border" href="">SIKDAD</a>
                         </li>
                         <li>
-                            <a href="">E-ELPPD</a>
+                            <a class="text-border" href="">E-ELPPD</a>
                         </li>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-sm-3 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="250">
             <div class="bg-content">
                 <div class="text-content">
-                    <h6 class="fw-bold text-center">Layanan</h6>
+                    <h6 class="fw-bold ms-3"><i class="fas fa-list"></i> Agenda</h6>
                     <hr>
-                    <ul>
+                    <div class="ms-3">
                         <li>
-                            <a href="">SIKDAD</a>
+                            <a href="">Belum ada agenda</a>
                         </li>
-                        <li>
-                            <a href="">E-ELPPD</a>
-                        </li>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-3 col-sm-3 mt-3" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100" data-aos-delay="250">
             <div class="bg-content">
                 <div class="text-content">
-                    <h6 class="fw-bold text-center">Layanan</h6>
+                    <h6 class="fw-bold ms-3"><i class="fas fa-download"></i> Download</h6>
                     <hr>
-                    <ul>
+                    <div class="ms-3">
                         <li>
-                            <a href="">SIKDAD</a>
+                            <a href="">Adm. KD & DPRD</a>
                         </li>
                         <li>
-                            <a href="">E-ELPPD</a>
+                            <a href="">LPPD</a>
                         </li>
-                    </ul>
+                        <li>
+                            <a href="">RLPPD</a>
+                        </li>
+                        <li>
+                            <a href="">SPM</a>
+                        </li>
+                    </div>
                 </div>
             </div>
         </div>

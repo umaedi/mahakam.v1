@@ -14,12 +14,18 @@ a {
   color: #222;
 }
 
+li {
+  list-style: none;
+}
+
 nav {
   transition: 500ms;
 }
 
 nav.navbar-bg {
   background-color: var(--accesenColor) !important;
+  box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12);
+  transition: all 80ms ease-out;
 }
 nav.navbar .navbar-nav .nav-link {
   color: #222;
@@ -29,7 +35,7 @@ nav.navbar .navbar-nav .nav-link::after {
   display: block;
   width: 0;
   height: 2px;
-  background: #4472c4;
+  background: #1e9764;
   transition: width 0.3s;
 }
 
@@ -39,21 +45,26 @@ nav.navbar .navbar-nav .nav-link:hover::after {
 }
 
 div.bg-content {
-  background-color: #e2ccc9;
+  background-color: #1e9764;
   border-radius: 3px;
   height: 280px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 div.bg-content .text-content {
-  color: #222;
+  color: #fff;
   padding: 10px 15px;
 }
 div.bg-content .text-content h6 {
-  color: #222;
+  color: #fff;
 }
+
 div.bg-content .text-content a {
-  color: #222;
+  color: #fff;
+}
+div.bg-content .text-border:hover {
+  color: #f2f2f2;
+  font-weight: bold;
 }
 
 .footer {
@@ -78,7 +89,7 @@ div.bg-content .text-content a {
 }
 
 div.contact {
-  background-color: #4472c4;
+  background-color: #1e9764;
 }
 
 div.contact .main .item p {
@@ -179,7 +190,7 @@ div.contact .main .item p {
 }
 
 .about-for-mobile .sosmed a:hover {
-  color: #4472c4;
+  color: #1e9764;
 }
 
 .information .main h3.title {
@@ -199,7 +210,7 @@ div.contact .main .item p {
 }
 
 .information .main .item a:hover {
-  color: #4472c4;
+  color: #1e9764;
   margin-left: 3px;
   transition: all 0.5s ease 0s;
 }
@@ -246,7 +257,7 @@ div.contact .main .item p {
 }
 
 .copyright {
-  background-color: #3768bf;
+  background-color: #1c9160;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -272,15 +283,15 @@ div.contact .main .item p {
   bottom: 55px;
   right: 25px;
   font-size: 26px;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   background-color: #fff;
-  color: #3768bf;
+  color: #1e9764;
   cursor: pointer;
   outline: none;
-  border: 3px solid #3768bf;
-  border-radius: 50%;
-  transition-duration: 0.2s;
+  border: none;
+  border-radius: 45px;
+  transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
   transition-property: background-color, color;
 }

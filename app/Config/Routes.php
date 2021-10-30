@@ -32,8 +32,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/biografi', 'Biografi::bupati', ['filter' => 'auth']);
-$routes->get('/agenda', 'Agenda::index', ['filter' => 'auth']);
+$routes->get('/biografi', 'Biografi::bupati');
+$routes->get('/agenda', 'Agenda::index');
 $routes->get('/auth/login', 'Auth::index');
 $routes->get('/administrator', 'Administrator::index', ['filter' => 'auth']);
 

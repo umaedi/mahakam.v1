@@ -7,8 +7,8 @@
         </button>
 
         <!-- Topbar Navbar -->
-        <div class="alert alert-success my-2 alert-dismissible fade show" role="alert">
-            <strong>Hallo Admin, </strong> Selamat datang di <strong>SIKDAD</strong> - Kabupaten Mahakam Ulu.
+        <div class="alert alert-success my-2 ml-2 alert-dismissible fade show" role="alert">
+            <strong>Hallo Admin, </strong> Selamat datang kembali, apa fokus utamamu hari ini
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -40,7 +40,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                     <img class="img-profile rounded-circle" src="<?= base_url(); ?>/sbadmin/img/undraw_profile_1.svg">
                 </a>
                 <!-- Dropdown - User Information -->
