@@ -12,7 +12,7 @@
   height: 35px;
   top: calc(50% - 35px / 2);
   left: calc(50% - 35px / 2);
-  background-color: #1e9764;
+  background-color: #748a53;
   -webkit-animation: rotateplane 1.2s infinite ease-in-out;
   animation: rotateplane 1.2s infinite ease-in-out;
 }

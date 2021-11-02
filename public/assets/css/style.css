@@ -83,7 +83,7 @@ div.card-body .btn-custom {
 }
 
 div.box-item-image:hover a {
-  color: #006838 !important;
+  color: #748a53 !important;
 }
 
 div.box-item-image img {
@@ -126,11 +126,11 @@ div.data-diri {
 }
 
 .nav-tabs .nav-link.active {
-  background-color: #1c9f49;
+  background-color: #748a53;
   color: #fff;
 }
 .nav-tabs .nav-link:hover {
-  background-color: #1c9f49 !important;
+  background-color: #748a53 !important;
   color: #fff;
 }
 
@@ -140,7 +140,7 @@ section.agenda {
 }
 
 div.head-title {
-  background-color: #006838;
+  background-color: #748a53;
   border-radius: 3px;
 }
 div.head-title p {
