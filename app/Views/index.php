@@ -57,7 +57,7 @@
                             <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark">PCR</span> / <i class="far fa-clock"></i> / <?= date('d F Y'); ?></small></p>
                             <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> Bandar Lampung</small></p>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="submit" class="btn btn-sm btn-success">Baca selengkapnya</button>
+                            <button type="submit" class="btn btn-sm btn-success" style="background-color: #748a53 !important; border:none">Baca selengkapnya</button>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                             <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark">Vaksin</span> / <i class="far fa-clock"></i> / <?= date('d F Y'); ?></small></p>
                             <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> Bandar Lampung</small></p>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="submit" class="btn btn-sm btn-success">Baca selengkapnya</button>
+                            <button type="submit" class="btn btn-sm btn-success" style="background-color: #748a53 !important; border:none">Baca selengkapnya</button>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
     <div class="container">
         <div class="row text-center my-3">
             <div class="col">
-                <a href="<?= base_url(); ?>/agenda"><button type="submit" class="btn btn-sm btn-success">Lihat selengkapnya <i class="fas fa-arrow-right"></i></button></a>
+                <a href="<?= base_url(); ?>/agenda"><button type="submit" class="btn btn-sm btn-success" style="background-color: #748a53 !important; border:none">Lihat selengkapnya <i class="fas fa-arrow-right"></i></button></a>
             </div>
         </div>
     </div>

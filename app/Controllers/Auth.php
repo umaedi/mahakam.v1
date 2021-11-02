@@ -8,12 +8,16 @@ class Auth extends BaseController
 {
     public function index()
     {
-        return view('auth/login');
+        $data = [
+            'auth'      => 'auth',
+            'title'     => 'Mahakam Ulu',
+            'validation' => \Config\Services::validation()
+        ];
+        return view('auth/login', $data);
     }
 
     public function login()
     {
-        $session = session();
         $model = new UserModel();
         $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
@@ -28,14 +32,14 @@ class Auth extends BaseController
                     'user_email'    => $data['user_email'],
                     'logged_in'     => TRUE
                 ];
-                $session->set($ses_data);
+                session()->set($ses_data);
                 return redirect()->to('/administrator');
             } else {
-                $session->setFlashdata('msg', 'Wrong Password');
+                session()->setFlashdata('pesan', 'Password salah');
                 return redirect()->to('/auth/login');
             }
         } else {
-            $session->setFlashdata('msg', 'Email not Found');
+            session()->setFlashdata('msg', 'Email tidak ditemukan');
             return redirect()->to('/auth/login');
         }
     }

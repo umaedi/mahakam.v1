@@ -7,7 +7,7 @@ class Biografi extends BaseController
     public function bupati()
     {
         $data = [
-            'img'       => '/assets/img/bupati/bupati.jpg',
+            'img'       => '/assets/img/walikota/bupati.jpg',
             'profil'    => 'PROFIL BUPATI',
             'nama'      => 'BONIFASIUS BELAWAN GEH, SH',
             'jabatan'   => 'Bupati Mahakam Ulu',
@@ -62,7 +62,7 @@ class Biografi extends BaseController
     public function wakil()
     {
         $data = [
-            'img'       => '/assets/img/bupati/wakil.jpg',
+            'img'       => '/assets/img/walikota/wakil.jpg',
             'profil'    => 'PROFIL BUPATI',
             'nama'      => 'Drs. Yohanes Avun, M.Si',
             'jabatan'   => 'Wakil Bupati Mahakam Ulu',

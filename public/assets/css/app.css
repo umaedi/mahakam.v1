@@ -35,7 +35,7 @@ nav.navbar .navbar-nav .nav-link::after {
   display: block;
   width: 0;
   height: 2px;
-  background: #1e9764;
+  background: #748a53;
   transition: width 0.3s;
 }
 
@@ -45,7 +45,7 @@ nav.navbar .navbar-nav .nav-link:hover::after {
 }
 
 div.bg-content {
-  background-color: #1e9764;
+  background-color: #748a53;
   border-radius: 3px;
   height: 280px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -89,7 +89,7 @@ div.bg-content .text-border:hover {
 }
 
 div.contact {
-  background-color: #1e9764;
+  background-color: #748a53;
 }
 
 div.contact .main .item p {
@@ -108,7 +108,7 @@ div.contact .main .item p {
 }
 
 .information .main h2.brand-footer {
-  color: #4472c4;
+  color: #748a53;
 }
 
 .information .main .about {
@@ -145,7 +145,7 @@ div.contact .main .item p {
 }
 
 .information .main .about .sosmed a:hover {
-  color: #009479;
+  color: #748a53;
 }
 
 .about-for-mobile {
@@ -190,7 +190,7 @@ div.contact .main .item p {
 }
 
 .about-for-mobile .sosmed a:hover {
-  color: #1e9764;
+  color: #748a53;
 }
 
 .information .main h3.title {
@@ -210,7 +210,7 @@ div.contact .main .item p {
 }
 
 .information .main .item a:hover {
-  color: #1e9764;
+  color: #748a53;
   margin-left: 3px;
   transition: all 0.5s ease 0s;
 }
@@ -257,7 +257,7 @@ div.contact .main .item p {
 }
 
 .copyright {
-  background-color: #1c9160;
+  background-color: #6e854c;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -286,7 +286,7 @@ div.contact .main .item p {
   width: 45px;
   height: 45px;
   background-color: #fff;
-  color: #1e9764;
+  color: #748a53;
   cursor: pointer;
   outline: none;
   border: none;
