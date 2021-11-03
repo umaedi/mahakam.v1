@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <form action="/administrator/tambah_agenda" method="post">
+            <form action="/administrator/tambah_agenda" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <div class="card shadow mb-4">
                     <div class="card-header">
@@ -29,6 +29,51 @@
                                     <input type="date" class="form-control <?= ($validation->hasError('tanggal')) ? 'is-invalid' : ''; ?>" id="agenda" name="tanggal">
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('tanggal'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control <?= ($validation->hasError('tag')) ? 'is-invalid' : ''; ?>" id="tag" placeholder="Tag" name="tag">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('tag'); ?>
+                                    </div>
+                                    <small id="passwordHelpBlock" class="form-text text-muted">
+                                        tag hanya satu kata
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <select class="form-control" id="exampleFormControlSelect1" name="kategori">
+                                        <?php foreach ($kategori as $k) : ?>
+                                            <option value="<?= $k['id']; ?>"><?= $k['nama']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <small id="passwordHelpBlock" class="form-text text-muted">
+                                        Kategori
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control <?= ($validation->hasError('lokasi')) ? 'is-invalid' : ''; ?>" id="tag" name="lokasi">
+                                    <div class="invalid-feedback">
+                                        <?= $validation->getError('lokasi'); ?>
+                                    </div>
+                                    <small id="passwordHelpBlock" class="form-text text-muted">
+                                        Lokasi agenda
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input <?= $validation->hasError('img') ? 'is-invalid' : ''; ?>" id="customFile" name="img" onchange="previewImg()">
+                                        <div id="validationServer03Feedback" class="invalid-feedback">
+                                            <?= $validation->getError('img'); ?>
+                                        </div>
+                                        <label class="custom-file-label" for="customFile">Pilih file</label>
                                     </div>
                                 </div>
                             </div>

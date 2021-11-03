@@ -35,6 +35,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/biografi', 'Biografi::bupati');
 $routes->get('/agenda', 'Agenda::index');
 $routes->get('/auth/login', 'Auth::index');
+$routes->get('/dokumen', 'Dokumen::index.php');
 $routes->get('/administrator', 'Administrator::index', ['filter' => 'auth']);
 $routes->delete('/administrator/(:num)', 'Administrator::delete_agenda/$1');
 $routes->delete('/administrator/dokumen/(:num)', 'Administrator::delete_dokumen/$1');

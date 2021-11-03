@@ -36,9 +36,16 @@
        </li>
        <hr class="sidebar-divider d-none d-md-block">
        <li class="nav-item">
-           <a class="nav-link" href="<?= base_url(); ?>/administrator/agenda">
+           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#agenda" aria-expanded="true" aria-controls="collapseUtilities">
                <i class="fas fa-calendar-alt"></i>
-               <span>Agenda</span></a>
+               <span>Agenda</span>
+           </a>
+           <div id="agenda" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/kategori">Kategori</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/agenda">Agenda</a>
+               </div>
+           </div>
        </li>
        <li class="nav-item">
            <a class="nav-link" href="<?= base_url(); ?>/administrator/dokumen">

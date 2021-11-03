@@ -3,9 +3,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <form action="/administrator/update_agenda/<?= $edit_agenda['id']; ?>" method="post">
+            <form action="/administrator/update_agenda/<?= $edit_agenda['id']; ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= $edit_agenda['id']; ?>">
+                <input type="hidden" name="imgLama" value="<?= $edit_agenda['img']; ?>">
                 <div class="card shadow mb-4">
                     <div class="card-header">
                         <div class="d-sm-flex align-items-center justify-content-between">
@@ -30,6 +31,45 @@
                                     <input type="date" class="form-control <?= ($validation->hasError('tanggal')) ? 'is-invalid' : ''; ?>" id="agenda" name="tanggal" value="<?= $edit_agenda['tanggal']; ?>">
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('tanggal'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="tag" placeholder="Tag" name="tag" value="<?= $edit_agenda['tag']; ?>">
+                                    <small id="passwordHelpBlock" class="form-text text-muted">
+                                        tag hanya satu kata
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="form-group">
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                        <?php foreach ($kategori as $k) : ?>
+                                            <option value="<?= $k['id']; ?>"><?= $k['nama']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <small id="passwordHelpBlock" class="form-text text-muted">
+                                        Kategori
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="tag" name="lokasi" value="<?= $edit_agenda['lokasi']; ?>">
+                                    <small id="passwordHelpBlock" class="form-text text-muted">
+                                        Lokasi agenda
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input <?= $validation->hasError('img') ? 'is-invalid' : ''; ?>" id="customFile" name="img" onchange="previewImg()" value="<?= $edit_agenda['img']; ?>">
+                                        <div id="validationServer03Feedback" class="invalid-feedback">
+                                            <?= $validation->getError('img'); ?>
+                                        </div>
+                                        <label class="custom-file-label" for="customFile">Pilih file</label>
                                     </div>
                                 </div>
                             </div>

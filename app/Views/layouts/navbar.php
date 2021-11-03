@@ -28,11 +28,11 @@
                        <div class="animation start-home"></div>
                    </li>
                    <li class="nav-item me-4">
-                       <a class="nav-link fw-bold" href="#">Agenda</a>
+                       <a class="nav-link fw-bold" href="<?= base_url(); ?>/agenda">Agenda</a>
                        <div class="animation start-home"></div>
                    </li>
                    <li class="nav-item me-4">
-                       <a class="nav-link fw-bold" href="#">Download</a>
+                       <a class="nav-link fw-bold dwonload" href="<?= base_url(); ?>/dokumen/download">Download</a>
                        <div class="animation start-home"></div>
                    </li>
                    <li class="nav-item">

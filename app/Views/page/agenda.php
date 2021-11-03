@@ -1,4 +1,4 @@
-<?php $this->extend('layouts/template1') ?>
+<?php $this->extend('layouts/template_blog') ?>
 
 <?php $this->section('content') ?>
 <div class="container my-5">
@@ -8,131 +8,53 @@
                 <div class="head-title">
                     <p>AGENDA TERBARU</p>
                 </div>
-                <div class="card mb-3" style="max-width: 800px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="180px">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <?php foreach ($agenda as $a) : ?>
+                    <div class="card mb-3" style="max-width: 800px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="img-beranda">
+                                    <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="img-fluid rounded-start" alt="...">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $a['nama_agenda']; ?></h5>
+                                    <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark"><?= $a['tag']; ?></span> / <i class="far fa-clock"></i> / <?= $a['tanggal']; ?></small></p>
+                                    <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> <?= $a['lokasi']; ?></small></p>
+                                    <div class="deskripsi-blog">
+                                        <?= $a['deskripsi']; ?>
+                                    </div>
+                                    <a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" type="submit" class="btn btn-sm btn-success  mt-3" style="background-color: #748a53 !important; border:none">Baca selengkapnya</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mb-3" style="max-width: 800px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="180px">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="max-width: 800px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="180px">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="max-width: 800px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="180px">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-3" style="max-width: 800px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="180px">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div class="col-sm-4">
                 <div class="recent-post">
                     <div class="head-title">
                         <p>AGENDA BERIKUTNYA</p>
                     </div>
-                    <div class="card mb-3" style="max-width: 400px;">
-                        <div class="row g-0">
-                            <div class="col-md-3">
-                                <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="80px">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text fst-italic"><small class="text-muted"><?= date('d F y'); ?></small></p>
+                    <?php foreach ($getAgendaRecen as $ar) : ?>
+                        <div class="card mb-3" style="max-width: 400px;">
+                            <a href="<?= base_url(); ?>/agenda/p/<?= $ar['slug']; ?>">
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $ar['img']; ?>" class="img-fluid rounded-start" alt="..." width="80px">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <div class="card-body">
+                                            <div class="title-recent">
+                                                <?= $ar['nama_agenda']; ?>
+                                            </div>
+                                            <p class="card-text fst-italic"><small class="text-muted"><?= $ar['tanggal']; ?></small></p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="row g-0">
-                            <div class="border-dashes"></div>
-                            <div class="col-md-3">
-                                <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="80px">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text fst-italic"><small class="text-muted"><?= date('d F y'); ?></small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row g-0">
-                            <div class="border-dashes"></div>
-                            <div class="col-md-3">
-                                <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="80px">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text fst-italic"><small class="text-muted"><?= date('d F y'); ?></small></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row g-0">
-                            <div class="border-dashes"></div>
-                            <div class="col-md-3">
-                                <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="80px">
-                            </div>
-                            <div class="col-md-9">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text fst-italic"><small class="text-muted"><?= date('d F y'); ?></small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                     <div class="row">
                         <div id="kopi-covid"></div>
                         <script>

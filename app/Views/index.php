@@ -45,42 +45,30 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
-            <div class="card img-shadow mb-3" data-aos="fade-right" data-aos-duration="1100" data-aos-offset="100" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="<?= base_url(); ?>/assets/img/layanan/coba.jpg" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">LOREM IPSUM IS DATA DUMY</h5>
-                            <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark">PCR</span> / <i class="far fa-clock"></i> / <?= date('d F Y'); ?></small></p>
-                            <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> Bandar Lampung</small></p>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="submit" class="btn btn-sm btn-success" style="background-color: #748a53 !important; border:none">Baca selengkapnya</button>
+        <?php foreach ($agendaLimit as $a) : ?>
+            <div class="col-6">
+                <div class="card img-shadow mb-3" data-aos="fade-right" data-aos-duration="1100" data-aos-offset="100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="<?= base_url(); ?>/assets/img/layanan/coba.jpg" class="img-fluid rounded-start" alt="..." width="100%">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <div class="nama-agenda">
+                                    <?= $a['nama_agenda']; ?>
+                                </div>
+                                <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark"><?= $a['tag']; ?></span> / <i class="far fa-clock"></i> / <?= $a['tanggal']; ?></small></p>
+                                <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> <?= $a['lokasi']; ?></small></p>
+                                <div class="deskripsi-blog">
+                                    <?= $a['deskripsi']; ?>
+                                </div>
+                                <a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" type="submit" class="btn btn-sm btn-success mt-3" style="background-color: #748a53 !important; border:none">Baca selengkapnya</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="card mb-3 img-shadow" data-aos="fade-left" data-aos-duration="1100" data-aos-offset="100" style="max-width: 540px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <img src="<?= base_url(); ?>/assets/img/layanan/coba2.jpg" class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">LOREM IPSUM IS DATA DUMY</h5>
-                            <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark">Vaksin</span> / <i class="far fa-clock"></i> / <?= date('d F Y'); ?></small></p>
-                            <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> Bandar Lampung</small></p>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <button type="submit" class="btn btn-sm btn-success" style="background-color: #748a53 !important; border:none">Baca selengkapnya</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
     <div class="container">
         <div class="row text-center my-3">

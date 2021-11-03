@@ -133,6 +133,19 @@
             });
         });
 
+        $(function() {
+            $('.btn-edit-kategori').on('click', function() {
+                $('#tambahKategori').html('Edit kategori');
+
+                const id = $(this).data('id');
+                const nama = $(this).data('nama');
+
+                $('form').attr('action', '<?= base_url(); ?>/administrator/update_kategori/'.concat(id));
+                $('.id').val(id);
+                $('.namaKategori').val(nama);
+            });
+        });
+
         function previewImg() {
             const sampul = document.querySelector('#customFile');
             const sampulLabel = document.querySelector('.custom-file-label');

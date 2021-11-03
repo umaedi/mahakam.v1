@@ -6,18 +6,21 @@ use \App\Models\BupatiModel;
 use \App\Models\AgendaModel;
 use \App\Models\DokumenModel;
 use \App\Models\WakilModel;
+use \App\Models\KategoriModel;
 
 class Administrator extends BaseController
 {
     protected $BupatiModel;
     protected $WakilModel;
     protected $AgendaModel;
+    protected $KategoriModel;
     protected $DokumenModel;
     public function __construct()
     {
         $this->BupatiModel = new BupatiModel();
         $this->WakilModel = new WakilModel();
         $this->AgendaModel = new AgendaModel();
+        $this->KategoriModel = new KategoriModel();
         $this->DokumenModel = new DokumenModel();
     }
     public function index()
@@ -318,7 +321,8 @@ class Administrator extends BaseController
     public function buat_agenda()
     {
         $data = [
-            'validation' => \Config\Services::validation()
+            'validation' => \Config\Services::validation(),
+            'kategori'   => $this->KategoriModel->getKategori()
         ];
         return view('administrator/buat_agenda', $data);
     }
@@ -338,14 +342,40 @@ class Administrator extends BaseController
                     'required' => 'Tanggal wajib ditentukan',
                 ],
             ],
+            'tag'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Tag wajib disi',
+                ],
+            ],
+            'lokasi'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Lokasi wajib ditentukan',
+                ],
+            ],
+            'img' => [
+                'rules' => 'max_size[img,1024]|mime_in[img,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in' => 'Yang Anda upload bukan gambar'
+                ]
+            ]
         ])) {
             return redirect()->to('/administrator/buat_agenda')->withInput();
         }
+        $file = $this->request->getFile('img');
+        $namaFile = $file->getRandomName();
+        $file->move('assets/img/blogpost', $namaFile);
 
         $slug = url_title($this->request->getVar('nama_agenda'), '-', true);
         $this->AgendaModel->save([
             'nama_agenda'       => $this->request->getVar('nama_agenda'),
             'slug'              => $slug,
+            'tag'               => $this->request->getVar('tag'),
+            'kategori'          => $this->request->getVar('kategori'),
+            'img'               => $namaFile,
+            'lokasi'            => $this->request->getVar('lokasi'),
             'tanggal'           => $this->request->getVar('tanggal'),
             'deskripsi'         => $this->request->getVar('deskripsi')
         ]);
@@ -362,7 +392,8 @@ class Administrator extends BaseController
     {
         $data = [
             'validation'    => \Config\Services::validation(),
-            'edit_agenda'   => $this->AgendaModel->getAgenda($id)
+            'edit_agenda'   => $this->AgendaModel->getAgenda($id),
+            'kategori'      => $this->KategoriModel->getKategori()
         ];
         return view('administrator/edit_agenda', $data);
     }
@@ -386,11 +417,23 @@ class Administrator extends BaseController
             return redirect()->to('/administrator/edit_agenda/' . $this->request->getVar('id'))->withInput();
         }
 
+        $img = $this->request->getFile('img');
+        if ($img->getError() == 4) {
+            $imgName = $this->request->getVar('imgLama');
+        } else {
+            $imgName = $img->getRandomName();
+            $img->move('assets/img/blogpost', $imgName);
+            unlink('assets/img/blogpost/' . $this->request->getVar('imgLama'));
+        }
+
         $slug = url_title($this->request->getVar('nama_agenda'), '-', true);
         $this->AgendaModel->save([
             'id'            => $id,
             'nama_agenda'   => $this->request->getVar('nama_agenda'),
             'slug'          => $slug,
+            'tanggal'       => $this->request->getVar('tanggal'),
+            'img'           => $imgName,
+            'lokasi'        => $this->request->getVar('lokasi'),
             'tanggal'       => $this->request->getVar('tanggal'),
             'deskripsi'     => $this->request->getVar('deskripsi')
         ]);
@@ -415,6 +458,66 @@ class Administrator extends BaseController
         return redirect()->to('/administrator/agenda');
     }
 
+    public function kategori()
+    {
+        $data = [
+            'validation' => \Config\Services::validation(),
+            'kategori'   => $this->KategoriModel->getKategori(),
+        ];
+        return view('administrator/kategori', $data);
+    }
+
+    public function tambah_kategori()
+    {
+        if (!$this->validate([
+            'nama' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required'  => 'Nama kategori wajib diisi'
+                ],
+            ],
+        ])) {
+            return redirect()->to('/administrator/kategori')->withInput();
+        }
+        $this->KategoriModel->save([
+            'nama' => $this->request->getVar('nama'),
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Kategori berhasil ditambahkan',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/kategori');
+    }
+
+    public function update_kategori($id)
+    {
+        $this->KategoriModel->save([
+            'id'    => $this->request->getVar('id'),
+            'nama'  => $this->request->getVar('nama')
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Kategori berhasil diubah',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/kategori');
+    }
+
+    public function hapus_kategori($id)
+    {
+        $this->KategoriModel->delete($id);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Kategori berhasil dihapus',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/kategori');
+    }
+
     public function dokumen()
     {
         $data = [
@@ -433,27 +536,32 @@ class Administrator extends BaseController
                     'required'  => 'Nama file wajib diisi'
                 ],
             ],
-            'file'  => [
-                'rules' => 'required',
-                'errors'    => [
-                    'required'  => 'File wajib di pilih'
-                ],
-            ],
             'tanggal'  => [
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => 'Tanggal wajib ditentukan'
                 ]
+            ],
+            'file_dokumen'  => [
+                'rules' => 'max_size[file_dokumen,1024]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                ]
             ]
         ])) {
             return redirect()->to('/administrator/dokumen')->withInput();
         }
+        $file = $this->request->getFile('file_dokumen');
+        $namaFile = $file->getRandomName();
+        $file->move('assets/dokumen', $namaFile);
+
+
         $slug = url_title($this->request->getVar('nama_file'), '-', true);
         $this->DokumenModel->save([
             'nama_file'     => $this->request->getVar('nama_file'),
             'slug'          => $slug,
             'tanggal'       => $this->request->getVar('tanggal'),
-            'file'          => $this->request->getVar('file')
+            'file'          => $namaFile
         ]);
         session()->setFlashdata('pesan', "<script>
         swal({
@@ -473,22 +581,30 @@ class Administrator extends BaseController
                     'required' => 'Nama file wajib diisi',
                 ],
             ],
-            'file'   => [
-                'rules'     => 'required',
-                'errors'    => [
-                    'required' => 'File wajib diupload',
-                ],
-            ],
             'tanggal'   => [
                 'rules'     => 'required',
                 'errors'    => [
                     'required' => 'Tanggal wajib ditentukan',
                 ],
             ],
+            'file_dokumen'  => [
+                'rules' => 'max_size[file_dokumen,1024]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                ]
+            ]
         ])) {
             return redirect()->to('/administrator/dokumen/' . $this->request->getVar('id'))->withInput();
         }
 
+        $file = $this->request->getFile('file_dokumen');
+        if ($file->getError() == 4) {
+            $namaFile = $this->request->getVar('fileLama');
+        } else {
+            $namaFile = $file->getRandomName();
+            $file->move('assets/dokumen', $namaFile);
+            unlink('assets/dokumen/' . $this->request->getVar('fileLama'));
+        }
         $slug = url_title($this->request->getVar('nama_file'), '-', true);
         $this->DokumenModel->save([
             'id'            => $id,

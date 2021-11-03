@@ -8,13 +8,23 @@ class AgendaModel extends Model
 {
     protected $table = 'agenda';
     protected $useTimestamps = true;
-    protected $allowedFields = ['nama_agenda', 'slug', 'tanggal', 'deskripsi'];
+    protected $allowedFields = ['nama_agenda', 'slug', 'tag', 'kategori', 'img', 'lokasi', 'tanggal', 'deskripsi'];
 
-    public function getAgenda($id = false)
+    public function getAgenda($slug = false)
     {
-        if ($id == false) {
-            return $this->findAll();
+        if ($slug == false) {
+            return $this->orderBy('id', 'DESC')->findAll();
         }
-        return $this->where(['id' => $id])->first();
+        return $this->where(['slug' => $slug])->first();
+    }
+
+    public function getAgendaLimit()
+    {
+        return $this->findAll(2);
+    }
+
+    public function getAgendaRcent()
+    {
+        return $this->orderBy('id', 'DESC')->findAll(3);
     }
 }
