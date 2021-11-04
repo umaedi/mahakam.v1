@@ -25,7 +25,13 @@ class Administrator extends BaseController
     }
     public function index()
     {
-        return view('administrator/index');
+        $data = [
+            'agenda'            => $this->AgendaModel->getAgendaRcent(),
+            'dokumen'           => $this->DokumenModel->getDocumenLimit(),
+            'count_document'    => $this->DokumenModel->counAllDocument(),
+            'count_agenda'      => $this->AgendaModel->countAgenda()
+        ];
+        return view('administrator/index', $data);
     }
 
     public function bupati()
@@ -321,6 +327,7 @@ class Administrator extends BaseController
     public function buat_agenda()
     {
         $data = [
+            'tite'       => 'Agenda baru',
             'validation' => \Config\Services::validation(),
             'kategori'   => $this->KategoriModel->getKategori()
         ];
@@ -391,6 +398,7 @@ class Administrator extends BaseController
     public function edit_agenda($id)
     {
         $data = [
+            'title'         => 'Edit Agenda',
             'validation'    => \Config\Services::validation(),
             'edit_agenda'   => $this->AgendaModel->getAgenda($id),
             'kategori'      => $this->KategoriModel->getKategori()

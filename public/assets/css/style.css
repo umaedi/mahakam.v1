@@ -190,6 +190,10 @@ section.download .btn-custom {
   color: #fff;
 }
 
+.haref a {
+  color: #222 !important;
+}
+
 div.body-post div.img-post {
   width: 100%;
   max-height: 450px;

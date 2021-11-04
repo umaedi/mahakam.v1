@@ -29,13 +29,13 @@
                                     <td><?= $a['nama_agenda']; ?></td>
                                     <td><?= $a['tanggal']; ?></td>
                                     <td>
-                                        <a href="<?= base_url(); ?>/administrator/edit_agenda/<?= $a['id']; ?>" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                        <a href="<?= base_url(); ?>/administrator/edit_agenda/<?= $a['slug']; ?>" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                         <form action="<?= base_url(); ?>/administrator/<?= $a['id']; ?>" class="d-inline" method="post">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Hapus agenda ini ?')"><i class="far fa-trash-alt"></i></button>
                                         </form>
-                                        <a href="" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                        <a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" target="_blank" class="btn btn-sm btn-info"><i class="fas fa-eye text-white"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

@@ -18,6 +18,11 @@ class AgendaModel extends Model
         return $this->where(['slug' => $slug])->first();
     }
 
+    public function countAgenda()
+    {
+        return $this->countAll();
+    }
+
     public function getAgendaLimit()
     {
         return $this->findAll(2);

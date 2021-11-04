@@ -9,7 +9,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Agenda</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">75</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $count_agenda; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
@@ -25,7 +25,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
                                 Dokumen</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">120</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $count_document; ?></div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-file-pdf fa-2x text-gray-300"></i>
@@ -55,24 +55,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Kunjungan Vaksinasi</td>
-                                <td>29 Oct 2021</td>
-                                <td><i class="far fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Peresmian Gedung</td>
-                                <td>03 Sep 2021</td>
-                                <td><i class="far fa-eye"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Kunjungan Kerja</td>
-                                <td>13 Sep 2021</td>
-                                <td><i class="far fa-eye"></td>
-                            </tr>
+                            <?php $i = 1;
+                            foreach ($agenda as $a) : ?>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td><?= $a['nama_agenda']; ?></td>
+                                    <td><?= $a['tanggal']; ?></td>
+                                    <td><a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" target="_blank"><i class="far fa-eye text-gray-600"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -97,24 +89,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Laporan 1</td>
-                                <td>29 Oct 2021</td>
-                                <td><i class="far fa-eye"></i></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Laporan 2</td>
-                                <td>03 Sep 2021</td>
-                                <td><i class="far fa-eye"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Laporan 3</td>
-                                <td>13 Sep 2021</td>
-                                <td><i class="far fa-eye"></td>
-                            </tr>
+                            <?php $i = 1;
+                            foreach ($dokumen as $d) : ?>
+                                <tr>
+                                    <th scope="row"><?= $i++; ?></th>
+                                    <td><?= $d['nama_file']; ?></td>
+                                    <td><?= $d['tanggal']; ?></td>
+                                    <td><i class="far fa-eye"></i></td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

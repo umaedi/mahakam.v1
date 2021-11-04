@@ -17,4 +17,14 @@ class DokumenModel extends Model
         }
         return $this->where(['id' => $id])->first();
     }
+
+    public function getDocumenLimit()
+    {
+        return $this->orderBy('id', 'DESC')->findAll(3);
+    }
+
+    public function counAllDocument()
+    {
+        return $this->countAll();
+    }
 }

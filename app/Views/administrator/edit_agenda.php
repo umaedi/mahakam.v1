@@ -10,7 +10,7 @@
                 <div class="card shadow mb-4">
                     <div class="card-header">
                         <div class="d-sm-flex align-items-center justify-content-between">
-                            <h1 class="h3 mb-0 text-gray-800">Agenda Baru</h1>
+                            <h1 class="h3 mb-0 text-gray-800"><?= $title; ?></h1>
                             <a href="<?= base_url(); ?>/administrator/agenda" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
@@ -19,7 +19,7 @@
                             <div class="col-lg-8">
                                 <div class="form-group">
                                     <label for="agenda">Nama Agenda</label>
-                                    <input type="text" class="form-control <?= ($validation->hasError('nama_agenda')) ? 'is-invalid' : ''; ?>" id="agenda" name="nama_agenda" value="<?= (old('nama_agenda')) ? old('nama_agenda') : $edit_agenda['nama_agenda']; ?>">
+                                    <input type="text" class="form-control <?= ($validation->hasError('nama_agenda')) ? 'is-invalid' : ''; ?>" id="agenda" name="nama_agenda" value="<?= $edit_agenda['nama_agenda']; ?>">
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('nama_agenda'); ?>
                                     </div>
