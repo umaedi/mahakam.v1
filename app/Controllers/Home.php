@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use \App\Models\AgendaModel;
+use \App\Models\BannerModel;
 
 class Home extends BaseController
 {
@@ -18,6 +19,4 @@ class Home extends BaseController
 		];
 		return view('index', $data);
 	}
-	//--------------------------------------------------------------------
-
 }

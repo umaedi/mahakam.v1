@@ -54,9 +54,16 @@
        </li>
        <hr class="sidebar-divider d-none d-md-block">
        <li class="nav-item">
-           <a class="nav-link" href="tables.html">
+           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengaturan" aria-expanded="true" aria-controls="collapseUtilities">
                <i class="fas fa-cog"></i>
-               <span>Pengaturan</span></a>
+               <span>Pengaturan</span>
+           </a>
+           <div id="pengaturan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/profile">Profil</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/banner">Banner</a>
+               </div>
+           </div>
        </li>
        <li class="nav-item">
            <a class="nav-link" href="<?= base_url(); ?>/auth/logout" onclick="return confirm('Keluar Dari Admin Panel ?')">

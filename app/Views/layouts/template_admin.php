@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/select2-4.0.6-rc.1/dist/css/select2.min.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/img/logo/favicon.png" type="image/x-icon">
     <style>
         .ck-editor__editable_inline {
             min-height: 200px;
@@ -150,6 +151,40 @@
             const sampul = document.querySelector('#customFile');
             const sampulLabel = document.querySelector('.custom-file-label');
             const imgPreview = document.querySelector('.img-preview');
+
+            //ganti url
+            sampulLabel.textContent = sampul.files[0].name;
+
+            //ganti preView
+            const fileSampul = new FileReader();
+            fileSampul.readAsDataURL(sampul.files[0]);
+
+            fileSampul.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+
+        function previewImg2() {
+            const sampul = document.querySelector('#customFile2');
+            const sampulLabel = document.querySelector('.label2');
+            const imgPreview = document.querySelector('.img-preview2');
+
+            //ganti url
+            sampulLabel.textContent = sampul.files[0].name;
+
+            //ganti preView
+            const fileSampul = new FileReader();
+            fileSampul.readAsDataURL(sampul.files[0]);
+
+            fileSampul.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+
+        function previewImg3() {
+            const sampul = document.querySelector('#customFile3');
+            const sampulLabel = document.querySelector('.label3');
+            const imgPreview = document.querySelector('.img-preview3');
 
             //ganti url
             sampulLabel.textContent = sampul.files[0].name;
