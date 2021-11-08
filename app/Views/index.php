@@ -40,13 +40,13 @@
         </div>
     </div>
     <div class="row mt-5 mb-2 justify-content-center" data-aos="fade-right" data-aos-duration="1000" data-aos-offset="100">
-        <div class="col-12 layanan">
+        <div class="col-sm-12 layanan">
             <h5 class="text-center">AGENDA TERBARU</h5>
         </div>
     </div>
     <div class="row">
         <?php foreach ($agendaLimit as $a) : ?>
-            <div class="col-6">
+            <div class="col-sm-6">
                 <div class="card img-shadow mb-3" data-aos="fade-right" data-aos-duration="1100" data-aos-offset="100">
                     <div class="row g-0">
                         <div class="col-md-4">

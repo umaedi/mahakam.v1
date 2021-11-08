@@ -3,12 +3,12 @@
 <div class="container-fluid">
     <section class="download">
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-lg-6 col-sm-12">
                 <div class="list-download">
                     <div class="head-title">
                         <p>Download Dokumen</p>
                     </div>
-                    <table class="table">
+                    <table class="table table-responsive">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -24,7 +24,7 @@
                                     <th scope="row"><?= $i++; ?></th>
                                     <td><?= $d['nama_file']; ?></td>
                                     <td><?= $d['tanggal']; ?></td>
-                                    <td><a href="" class="btn btn-sm btn-custom"><i class="fas fa-cloud-download-alt"></i> Dwnload</a></td>
+                                    <td><a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['id']; ?>" class="btn btn-sm btn-custom"><i class="fas fa-cloud-download-alt"></i> Dwnload</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

@@ -10,6 +10,7 @@ class Dokumen extends BaseController
     public function __construct()
     {
         $this->DokumenModel = new DokumenModel();
+        $this->loadHelpers('download');
     }
     public function download()
     {
@@ -19,7 +20,7 @@ class Dokumen extends BaseController
 
     public function download_file($id)
     {
-        // 
+        // return $response->download('/path/to/photo.jpg', null);
     }
     //--------------------------------------------------------------------
 

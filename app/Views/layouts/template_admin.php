@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url(); ?>/assets/vendor/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/select2-4.0.6-rc.1/dist/css/select2.min.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -52,7 +53,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
+                        <span>Copyright &copy; <?= date('Y'); ?> Mahakam | Developed by News</span>
                     </div>
                 </div>
             </footer>
@@ -104,6 +105,14 @@
 
     <!-- plugin clasic editor -->
     <script src="<?= base_url(); ?>/assets/select2-4.0.6-rc.1/dist/js/select2.min.js"></script>
+
+    <!-- plugin datatable -->
+    <script src="<?= base_url(); ?>/assets/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="<?= base_url(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="<?= base_url(); ?>/assets/js/demo/datatables-demo.js"></script>
+
     <script>
         ClassicEditor
             .create(document.querySelector('#description'))

@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p class="">Copyright &copy; <span id="footer-cr-years"></span><?= date('Y'); ?>. All Right Reserved. Developed by Newus</p>
+        <p class="mt-3">Copyright &copy; <span id="footer-cr-years"></span><?= date('Y'); ?> Mahakam | Developed by Newus</p>
     </div>
     <button id="back-to-top-btn"><i class="fas fa-angle-double-up"></i></button>
 </footer>
