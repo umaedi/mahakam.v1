@@ -1,7 +1,7 @@
-   <nav class="navbar navbar-bg navbar-expand-lg navbar-light bg-transparent fixed-top">
+   <nav class="navbar navbar-bg navbar-expand-lg navbar-dark bg-transparent fixed-top">
        <div class="container">
-           <a class="navbar-brand" href="#">
-               <img class="lazyload" src="<?= base_url(); ?>/assets/img/logo/logo.png" width="220" alt="logo">
+           <a class="navbar-brand" href="<?= base_url(); ?>">
+               <img class="lazyload" src="<?= base_url(); ?>/assets/img/logo/logo.png" width="180px" alt="logo">
            </a>
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
@@ -14,7 +14,7 @@
                    </li>
                    <li class="nav-item me-4">
                        <div class="dropdown ">
-                           <a class="nav-link fw-bold fw-bold" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                           <a class="nav-link fw-bold" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                <span class="dropdown-toggle">Profil</span>
                            </a>
                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">

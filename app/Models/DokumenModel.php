@@ -10,12 +10,12 @@ class DokumenModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['nama_file', 'slug', 'file', 'tanggal'];
 
-    public function get_dokumen($id = false)
+    public function get_dokumen($slug = false)
     {
-        if ($id == false) {
+        if ($slug == false) {
             return $this->orderBy('id', 'DESC')->findAll();
         }
-        return $this->where(['id' => $id])->first();
+        return $this->where(['slug' => $slug])->first();
     }
 
     public function getDocumenLimit()

@@ -13,7 +13,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nama file</th>
-                                <th scope="col">Tanggal diupload</th>
+                                <th scope="col" class="text-center">Tanggal diupload</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
@@ -23,8 +23,8 @@
                                 <tr>
                                     <th scope="row"><?= $i++; ?></th>
                                     <td><?= $d['nama_file']; ?></td>
-                                    <td><?= $d['tanggal']; ?></td>
-                                    <td><a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['id']; ?>" class="btn btn-sm btn-custom"><i class="fas fa-cloud-download-alt"></i> Dwnload</a></td>
+                                    <td class="text-center"><?= $d['tanggal']; ?></td>
+                                    <td><a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['slug']; ?> " class="btn btn-sm btn-custom"><i class="fas fa-cloud-download-alt"></i> Dwnload</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

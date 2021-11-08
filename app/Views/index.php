@@ -50,7 +50,7 @@
                 <div class="card img-shadow mb-3" data-aos="fade-right" data-aos-duration="1100" data-aos-offset="100">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="<?= base_url(); ?>/assets/img/layanan/coba.jpg" class="img-fluid rounded-start" alt="..." width="100%">
+                            <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="img-fluid rounded-start" alt="..." width="100%">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

@@ -23,19 +23,19 @@ nav {
 }
 
 nav.navbar-bg {
-  background-color: var(--accesenColor) !important;
+  background-color: #758a52 !important;
   box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.12);
   transition: all 80ms ease-out;
 }
 nav.navbar .navbar-nav .nav-link {
-  color: #222;
+  color: #fff;
 }
 nav.navbar .navbar-nav .nav-link::after {
   content: "";
   display: block;
   width: 0;
   height: 2px;
-  background: #748a53;
+  background: #fff;
   transition: width 0.3s;
 }
 

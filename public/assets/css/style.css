@@ -244,3 +244,11 @@ div.post {
 div.recent-post div.border-dashes {
   border-top: 1px dashed #e5e5e5;
 }
+
+.card-covid {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 1.5 rem 1.5 rem;
+  position: relative;
+}

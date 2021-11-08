@@ -10,7 +10,6 @@ class Dokumen extends BaseController
     public function __construct()
     {
         $this->DokumenModel = new DokumenModel();
-        $this->loadHelpers('download');
     }
     public function download()
     {
@@ -18,9 +17,10 @@ class Dokumen extends BaseController
         return view('dokumen/index', $data);
     }
 
-    public function download_file($id)
+    function download_file($slug)
     {
-        // return $response->download('/path/to/photo.jpg', null);
+        $data = $this->DokumenModel->get_dokumen($slug);
+        return $this->response->download('assets/dokumen/' . $data['file'], null);
     }
     //--------------------------------------------------------------------
 

@@ -27,7 +27,7 @@
                             <a href="<?= base_url(); ?>/agenda/p/<?= $ar['slug']; ?>">
                                 <div class="row g-0">
                                     <div class="col-md-3">
-                                        <img src="<?= base_url(); ?>/assets/img/blogpost/agenda1_rev.jpg" class="img-fluid rounded-start" alt="..." width="80px">
+                                        <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $ar['img']; ?>" class="img-fluid rounded-start" alt="..." width="80px">
                                     </div>
                                     <div class="col-md-9">
                                         <div class="card-body">

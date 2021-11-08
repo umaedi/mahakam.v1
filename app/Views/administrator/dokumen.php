@@ -81,7 +81,7 @@
                                             <input type="hidden" name="_method" value="DELETE">
                                             <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Hapus dokumen ini ?')"><i class="far fa-trash-alt"></i></button>
                                         </form>
-                                        <a href="" class="btn btn-sm btn-info"><i class="fas fa-download"></i></a>
+                                        <a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['slug']; ?>" class="btn btn-sm btn-info"><i class="fas fa-download"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
