@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/app-responsive.css" type="text/css">
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/style-responsive.css" type="text/css">
+    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/img/logo/favicon.png" type="image/x-icon">
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
