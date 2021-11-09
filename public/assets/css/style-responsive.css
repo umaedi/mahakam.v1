@@ -5,7 +5,7 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 640px) {
   div.container .bupati img {
     width: 50%;
   }
@@ -15,7 +15,7 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 640px) {
   div.st2-slide-content {
     color: #fff;
     position: absolute;
@@ -45,8 +45,20 @@
   }
 }
 
-@media screen and (max-width: 576px) {
-  div.layanan-mobile {
+@media screen and (max-width: 640px) {
+  .layanan-mobile {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    display: flex !important;
+    flex-direction: row !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  div.img-beranda {
     width: 100%;
+    max-height: 200px;
+    vertical-align: auto;
+    overflow: hidden;
   }
 }

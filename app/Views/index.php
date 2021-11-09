@@ -7,11 +7,11 @@
             <h5 class="text-center head-title" id="layanan">LAYANAN</h5>
         </div>
     </div>
-    <div class="layanan-mobile mb-4">
-        <div class="row">
+    <div class="layanan-mobilee mb-4">
+        <div class="row layanan-mobile">
             <div class="col-10 offset-1">
-                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-                    <div class="col-lg-3 col-md-5 col-sm-5">
+                <div class="row row-cols-2 row-cols-md-3 g-4 justify-content-center">
+                    <div class="col-lg-3 col-md-3 col-sm-2">
                         <div class="icon-user" data-bs-toggle="tooltip" data-bs-placement="left" title="Sistem Informasi Administrasi Kepala Daerah & DPRD">
                             <div class=" card box-item-image" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
                                 <a href="<?= base_url(); ?>/administrator">
@@ -23,7 +23,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-5 col-sm-5" id="construction">
+                    <div class="col-lg-3 col-md-3 col-sm-2" id="construction">
                         <div class="ebook" data-bs-toggle="tooltip" data-bs-placement="right" title="Sistem Informasi Administrasi Kepala Daerah & DPRD">
                             <div class=" card box-item-image ms-1" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
                                 <a href="">

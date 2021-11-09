@@ -51,11 +51,11 @@
   }
 
   footer div.contact div.main div.item p {
-    margin-top: 5px;
+    /* margin-top: 5px; */
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 640px) {
   #back-to-top-btn {
     font-size: 16px;
     width: 10%;
@@ -66,10 +66,10 @@
 }
 
 /* footer copyright */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 640px) {
   footer div.copyright {
     display: block;
-    height: auto;
+    height: 100%;
   }
 
   footer div.copyright p {

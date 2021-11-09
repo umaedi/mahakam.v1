@@ -39,15 +39,16 @@
                         <div class="card mb-3" style="max-width: 400px;">
                             <a href="<?= base_url(); ?>/agenda/p/<?= $ar['slug']; ?>">
                                 <div class="row g-0">
-                                    <div class="col-md-3">
-                                        <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $ar['img']; ?>" class="img-fluid rounded-start" alt="..." width="80px">
+                                    <div class="col-md-4">
+                                        <div class="img-berikutnya">
+                                            <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $ar['img']; ?>" class="img-fluid rounded-start" alt="..." width="100%">
+                                        </div>
                                     </div>
-                                    <div class="col-md-9">
+                                    <div class="col-md-8">
                                         <div class="card-body">
                                             <div class="title-recent">
                                                 <?= $ar['nama_agenda']; ?>
                                             </div>
-                                            <p class="card-text fst-italic"><small class="text-muted"><?= $ar['tanggal']; ?></small></p>
                                         </div>
                                     </div>
                                 </div>
