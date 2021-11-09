@@ -10,7 +10,7 @@
                 </div>
                 <div class="body-post">
                     <div class="img-post">
-                        <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $agenda['img']; ?>" width="100%">
+                        <img data-src="<?= base_url(); ?>/assets/img/blogpost/<?= $agenda['img']; ?>" class="lazyload" width="100%">
                     </div>
                     <div class="post">
                         <?= $agenda['deskripsi']; ?>
@@ -54,7 +54,7 @@
                             <a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" style="color: #222;">
                                 <div class="card">
                                     <div class="img-beranda">
-                                        <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="card-img-top" alt="...">
+                                        <img data-src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="lazyload card-img-top" alt="...">
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title"><?= $a['nama_agenda']; ?></h5>
@@ -79,7 +79,7 @@
                                 <div class="row g-0">
                                     <div class="col-md-4">
                                         <div class="img-berikutnya">
-                                            <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $ar['img']; ?>" class="img-fluid rounded-start" alt="..." width="80px">
+                                            <img data-src="<?= base_url(); ?>/assets/img/blogpost/<?= $ar['img']; ?>" class="lazyload img-fluid rounded-start" alt="..." width="80px">
                                         </div>
                                     </div>
                                     <div class="col-md-8">

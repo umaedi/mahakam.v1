@@ -51,7 +51,7 @@
                     <div class="row g-0">
                         <div class="col-md-4">
                             <div class="img-beranda">
-                                <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="img-fluid rounded-start" alt="..." width="100%">
+                                <img data-src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="lazyload img-fluid rounded-start" alt="..." width="100%">
                             </div>
                         </div>
                         <div class="col-md-8">
