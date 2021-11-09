@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
-                <?= $pager->simpleLinks('agenda', 'agenda_pagination') ?>
+                <!-- pager -->
                 <b:includable id='postsharebutton'>
                     <div id='share-container'>
                         <!-- social sharing button -->
