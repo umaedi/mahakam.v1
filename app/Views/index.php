@@ -50,15 +50,16 @@
                 <div class="card img-shadow mb-3" data-aos="fade-right" data-aos-duration="1100" data-aos-offset="100">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="img-fluid rounded-start" alt="..." width="100%">
+                            <div class="img-beranda">
+                                <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="img-fluid rounded-start" alt="..." width="100%">
+                            </div>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <div class="nama-agenda">
                                     <?= $a['nama_agenda']; ?>
                                 </div>
-                                <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark"><?= $a['tag']; ?></span> / <i class="far fa-clock"></i> / <?= $a['tanggal']; ?></small></p>
-                                <p class="card-text"><small class="text-muted"><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> <?= $a['lokasi']; ?></small></p>
+                                <p class="card-text"><small class="text-muted"><span class="badge bg-warning text-dark"><?= $a['tag']; ?> </span> / <i class="far fa-clock"></i> / <?= $a['tanggal']; ?></small><span class="badge bg-light text-dark">/ <i class="fas fa-map-marker-alt"></i> <?= $a['lokasi']; ?></small></p>
                                 <div class="deskripsi-blog">
                                     <?= $a['deskripsi']; ?>
                                 </div>

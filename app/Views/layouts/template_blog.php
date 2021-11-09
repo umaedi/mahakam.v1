@@ -25,7 +25,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2baad1d54e.js" crossorigin="anonymous"></script>
 
-    <title>MAHAKAM ULU | Untuk Semua Sejahtera Berkeadilan</title>
+    <title>Mahakam Ulu | Untuk Semua Sejahtera Berkeadilan</title>
 </head>
 
 <body>

@@ -40,7 +40,7 @@
 <body>
     <div class="fakeLoader"></div>
     <!-- view content -->
-    <?= $this->include('layouts/navbar'); ?>
+    <?= $this->include('layouts/navbar_blog'); ?>
     <?= $this->renderSection('content'); ?>
     <?= $this->include('layouts/footerv2'); ?>
 
@@ -66,16 +66,16 @@
             once: true
         });
 
-        // Scroll bar
-        $(document).ready(function() {
-            $(window).on('scroll', function() {
-                if ($(window).scrollTop() > 80) {
-                    $("nav").addClass('navbar-bg');
-                } else {
-                    $("nav").removeClass('navbar-bg');
-                }
-            });
-        });
+        // // Scroll bar
+        // $(document).ready(function() {
+        //     $(window).on('scroll', function() {
+        //         if ($(window).scrollTop() > 80) {
+        //             $("nav").addClass('navbar-bg');
+        //         } else {
+        //             $("nav").removeClass('navbar-bg');
+        //         }
+        //     });
+        // });
 
         // tooltip
         var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))

@@ -1,0 +1,151 @@
+<link rel="stylesheet" type="text/css" href="/styles/dist/tailwind.css" />
+    <div style="outline: none;" tabIndex="-1" id="gatsby-focus-wrapper"><style type="text/css">
+        :root {
+          --background-color: white;
+          --box-color: #ebebeb;
+          --text-color: #21262c;
+          --number-font-size: 2.4rem;
+          --heading-font-size: 1.6rem;
+        }
+  
+        html, body {
+          margin: 0px !important;
+          padding:0px !important;
+        }  
+        #root {
+          padding: 1rem;
+          height: calc(100vh - 2rem);
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+  
+        .maincontainer {
+          width: 100%;
+          display: grid;
+          place-items:center;
+        }
+        body.darkmode {
+          --background-color: #21262c;
+          --box-color: #282d33;
+          --text-color: #fff;
+        }
+  
+        .cornflowerblue {
+          color: cornflowerblue;
+        }
+        .orange {
+          color: #f5a623;
+        }
+        .green {
+          color: #219653;
+        }
+        .red {
+          color: #d8232a;
+        }
+        .container {
+          display: grid;
+          grid-template-columns: 25% 25% 25% 25%;
+          margin-bottom: 1.5rem;
+        }
+  
+        @media (max-width: 1000px) {
+          body {
+            --number-font-size: 1.5rem;
+            --heading-font-size: 1.5rem;
+          }
+  
+        }
+        
+        @media (max-width: 640px) {
+          .container {
+            grid-template-columns: 50% 50%;
+          }
+         
+        }
+        @media (max-width: 480px) {
+          body {
+            --number-font-size: 1.1rem;
+            --heading-font-size: 0.9rem;
+          }
+
+          .header {
+            gap:10px !important;
+          }
+  
+          .box {
+            margin: 0.2rem !important;
+          }
+  
+          .box .label {
+            font-size: 0.65rem !important;
+          }
+        }
+  
+        h1 {
+          margin: 0px;
+          padding: 0px;
+          font-size: var(--heading-font-size);
+        }
+  
+        .box {
+          margin: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0.7rem;
+          background-color: var(--box-color);
+          border-radius: 6px;
+          margin-bottom: 0.3rem;
+        }
+  
+        .box .number {
+          font-size: var(--number-font-size);
+        }
+        .box .label {
+          font-size: 0.8rem;
+          text-align: center;
+        }
+  
+        .footer {
+          display: flex;
+          flex-direction: column;
+          color: #858a93;
+          font-weight: 400 !important;
+          text-align: center;
+        }
+        .footer a {
+          color: inherit;
+        }
+        .footer .info {
+          font-size: 0.7rem;
+        }
+        .footer .date {
+          font-size: 0.8rem;
+        }   
+        
+        .header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          gap: 1rem;
+          align-items:center;
+          text-align:left;
+        }
+    </style>
+    
+    <div id="root" class="darkmode">
+        <div class="maincontainer">
+            <div class="header">
+                <h1 class="font-bold ">Update COVID-19 Indonesia</h1></div>
+                <div class="footer">
+                    <span class="text-xs info">Pembaruan Terakhir <span class="font-bold"></span></span></div>
+                    <div class="container">
+                        <div class="box"><span class="number cornflowerblue">45</span><span class="label text-xs">Terkonfirmasi</span>
+                        </div>
+                        <div class="box">
+                            <span class="number orange">10</span><span class="label text-xs">Dirawat</span></div>
+                            <div class="box"><span class="number green">20</span><span class="label text-xs">Sembuh</span></div>
+                            <div class="box">
+                                <span class="number red">35</span><span class="label text-xs">Meninggal</span>
+                            </div>

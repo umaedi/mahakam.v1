@@ -36,6 +36,9 @@
                        <div class="animation start-home"></div>
                    </li>
                    <li class="nav-item">
+                       <a href="<?= base_url(); ?>/auth/login" class="nav-link"><i class="fas fa-user"></i></a>
+                   </li>
+                   <li class="nav-item">
                        <a class="nav-link btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-search"></i></a>
                    </li>
                </ul>

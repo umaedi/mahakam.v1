@@ -30,6 +30,6 @@ class AgendaModel extends Model
 
     public function getAgendaRcent()
     {
-        return $this->orderBy('id', 'DESC')->findAll(3);
+        return $this->orderBy('id', 'DESC')->findAll(4);
     }
 }
