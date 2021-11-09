@@ -62,3 +62,19 @@
     overflow: hidden;
   }
 }
+@media screen and (max-width: 640px) {
+  .img-berikutnya img {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title-recent {
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

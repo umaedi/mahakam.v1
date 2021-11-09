@@ -38,13 +38,13 @@
                     <?php foreach ($getAgendaRecen as $ar) : ?>
                         <div class="card mb-3" style="max-width: 400px;">
                             <a href="<?= base_url(); ?>/agenda/p/<?= $ar['slug']; ?>">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
+                                <div class="row row-cols-2 mb-3 row-cols-md-2 g-0">
+                                    <div class="col-sm-2 col-lg-2 col-lg-4 col-md-4">
                                         <div class="img-berikutnya">
                                             <img src="<?= base_url(); ?>/assets/img/blogpost/<?= $ar['img']; ?>" class="img-fluid rounded-start" alt="..." width="100%">
                                         </div>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-lg-8 col-md-8 col-sm-10">
                                         <div class="card-body">
                                             <div class="title-recent">
                                                 <?= $ar['nama_agenda']; ?>

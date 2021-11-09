@@ -68,7 +68,6 @@
 /* footer copyright */
 @media screen and (max-width: 640px) {
   footer div.copyright {
-    display: block;
     height: 100%;
   }
 

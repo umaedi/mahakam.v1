@@ -19,7 +19,7 @@
 <body class="bg-transparent">
     <div class="container">
         <div class="row justify-content-center mt-3">
-            <div class="col-xl-5 col-lg-12 col-md-9">
+            <div class="col-xl-5 col-lg-12 col-md-9 col-sm-12">
                 <div class="p-5">
                     <div class="text-center">
                         <img src="<?= base_url(); ?>/assets/img/logo/logo-mahakam.png" width="35%">

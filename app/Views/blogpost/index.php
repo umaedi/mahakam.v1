@@ -48,7 +48,7 @@
                         </div>
                     </div> <!-- social sharing button end -->
                 </b:includable>
-                <div class="row row-cols-2 mb-3 row-cols-md-2 g-4">
+                <div class="row row-cols-2 mb-3 row-cols-md-2 row-cols-sm-2 g-4">
                     <?php foreach ($getAgendaRecen as $a) : ?>
                         <div class="col">
                             <a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" style="color: #222;">
