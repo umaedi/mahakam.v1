@@ -32,13 +32,21 @@
 
                         <?php if ($config->validFields === ['email']) : ?>
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" class="form-control <?= session('errors.login') ? 'is-invalid' : ''; ?>" id="email" autocomplete="of" name="login">
+                                <label for="login"><?= lang('Auth.email') ?></label>
+                                <input type="email" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login" placeholder="<?= lang('Auth.email') ?>">
                                 <div class="invalid-feedback">
                                     <?= session('errors.login') ?>
                                 </div>
                             </div>
-                        <?php endif ?>
+                        <?php else : ?>
+                            <div class="form-group">
+                                <label for="login"><?= lang('Auth.emailOrUsername') ?></label>
+                                <input type="text" class="form-control <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" name="login">
+                                <div class="invalid-feedback">
+                                    <?= session('errors.login') ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
 
                         <div class="form-group">
                             <label for="pass">Password</label>
