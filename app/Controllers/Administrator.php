@@ -32,6 +32,8 @@ class Administrator extends BaseController
     public function index()
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'agenda'            => $this->AgendaModel->getAgendaRcent(),
             'dokumen'           => $this->DokumenModel->getDocumenLimit(),
             'count_document'    => $this->DokumenModel->counAllDocument(),
@@ -43,6 +45,8 @@ class Administrator extends BaseController
     public function banner()
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation' => \Config\Services::validation(),
             'banner' => $this->bannerModel->getBanner()
         ];
@@ -52,6 +56,8 @@ class Administrator extends BaseController
     public function edit_banner($id)
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'banner'        => $this->bannerModel->getBanner($id)
         ];
@@ -184,13 +190,18 @@ class Administrator extends BaseController
 
     public function bupati()
     {
-        $data['bupati'] = $this->BupatiModel->get_bupati();
+        $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
+            'bupati' => $this->BupatiModel->get_bupati()
+        ];
         return view('administrator/bupati', $data);
     }
 
     public function edit_bupati($id)
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
             'validation'    => \Config\Services::validation(),
             'bupati'        => $this->BupatiModel->get_bupati($id)
         ];
@@ -324,13 +335,19 @@ class Administrator extends BaseController
 
     public function wakil_bupati()
     {
-        $data['wakil'] = $this->WakilModel->getWakil();
+        $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
+            'wakil' => $this->WakilModel->getWakil()
+        ];
         return view('administrator/wakil_bupati', $data);
     }
 
     public function edit_wakil($id)
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation' => \Config\Services::validation(),
             'wakil'      => $this->WakilModel->getWakil($id)
         ];
@@ -468,14 +485,18 @@ class Administrator extends BaseController
 
     public function agenda()
     {
-        $data['agenda'] = $this->AgendaModel->getAgenda();
+        $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
+            'agenda' => $this->AgendaModel->getAgenda()
+        ];
         return view('administrator/agenda', $data);
     }
 
     public function buat_agenda()
     {
         $data = [
-            'tite'       => 'Agenda baru',
+            'title'             => 'Mahakam | Administrator',
             'validation' => \Config\Services::validation(),
             'kategori'   => $this->KategoriModel->getKategori()
         ];
@@ -546,7 +567,8 @@ class Administrator extends BaseController
     public function edit_agenda($id)
     {
         $data = [
-            'title'         => 'Edit Agenda',
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'edit_agenda'   => $this->AgendaModel->getAgenda($id),
             'kategori'      => $this->KategoriModel->getKategori()
@@ -617,6 +639,8 @@ class Administrator extends BaseController
     public function kategori()
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation' => \Config\Services::validation(),
             'kategori'   => $this->KategoriModel->getKategori(),
         ];
@@ -677,6 +701,8 @@ class Administrator extends BaseController
     public function dokumen()
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'dokumen' => $this->DokumenModel->get_dokumen(),
         ];
@@ -793,6 +819,8 @@ class Administrator extends BaseController
     public function profile()
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'banner'        => $this->bannerModel->findAll(),
             'user'          => $this->UserModel->getUser()
@@ -803,6 +831,8 @@ class Administrator extends BaseController
     public function edit_profile($user_id)
     {
         $data = [
+            'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'user'          => $this->UserModel->getUser($user_id)
         ];

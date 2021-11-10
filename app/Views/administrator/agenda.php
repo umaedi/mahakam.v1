@@ -6,14 +6,14 @@
         <div class="card-header">
             <div class="col-sm-12">
                 <div class="d-sm-flex align-items-center justify-content-between">
-                    <h1 class="h3 mb-0 text-gray-800">Agenda</h1>
-                    <a href="<?= base_url(); ?>/administrator/buat_agenda" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-sm fa-plus"></i> Tambah</a>
+                    <h1 class="h3 mb-0 text-gray-800 d-inline mr-5">Agenda</h1>
+                    <a href="<?= base_url(); ?>/administrator/buat_agenda" class="d-inline ml-auto btn btn-sm btn-info"><i class="fas fa-sm fa-plus"></i> Tambah</a>
                 </div>
             </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table">
+                <table class="table" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th scope="col">No</th>
@@ -30,13 +30,13 @@
                                 <td><?= $a['nama_agenda']; ?></td>
                                 <td><?= $a['tanggal']; ?></td>
                                 <td>
-                                    <a href="<?= base_url(); ?>/administrator/edit_agenda/<?= $a['slug']; ?>" class="btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
+                                    <a href="<?= base_url(); ?>/administrator/edit_agenda/<?= $a['slug']; ?>" class="d-inline btn btn-sm btn-warning"><i class="far fa-edit"></i></a>
                                     <form action="<?= base_url(); ?>/administrator/<?= $a['id']; ?>" class="d-inline" method="post">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Hapus agenda ini ?')"><i class="far fa-trash-alt"></i></button>
+                                        <button type="submit" class="d-inline my-2 btn btn-sm btn-danger" onclick="return confirm('Hapus agenda ini ?')"><i class="far fa-trash-alt"></i></button>
                                     </form>
-                                    <a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" target="_blank" class="btn btn-sm btn-info"><i class="fas fa-eye text-white"></i></a>
+                                    <a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" target="_blank" class="d-inline btn btn-sm btn-info"><i class="fas fa-eye text-white"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

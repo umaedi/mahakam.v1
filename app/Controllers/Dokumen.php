@@ -13,7 +13,10 @@ class Dokumen extends BaseController
     }
     public function download()
     {
-        $data['dokumen'] = $this->DokumenModel->get_dokumen();
+        $data = [
+            'title'   => 'Mahakam | Download',
+            'dokumen' => $this->DokumenModel->get_dokumen()
+        ];
         return view('dokumen/index', $data);
     }
 

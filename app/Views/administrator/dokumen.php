@@ -49,12 +49,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8 mt-3">
             <div class="card shadow">
                 <div class="card-header">
                     <div class="d-sm-flex align-items-center justify-content-between">
-                        <h1 class="h3 mb-0 text-gray-800">Dokumen diupload</h1>
-                        <a href="<?= base_url(); ?>/administrator/dokumen" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-plus"></i> Tambah</a>
+                        <h1 class="h3 mb-0 text-gray-800 d-sm-inline">Dokumen diupload</h1>
+                        <a href="<?= base_url(); ?>/administrator/dokumen" class="d-sm-inline mt-2 btn btn-sm btn-info"><i class="fas fa-plus"></i> Tambah</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -79,7 +79,7 @@
                                         <form action="<?= base_url(); ?>/administrator/dokumen/<?= $d['id']; ?>" class="d-inline" method="post">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Hapus dokumen ini ?')"><i class="far fa-trash-alt"></i></button>
+                                            <button type="submit" class="btn btn-sm btn-danger my-2" onclick="return confirm('Hapus dokumen ini ?')"><i class="far fa-trash-alt"></i></button>
                                         </form>
                                         <a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['slug']; ?>" class="btn btn-sm btn-info"><i class="fas fa-download"></i></a>
                                     </td>

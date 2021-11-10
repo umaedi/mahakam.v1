@@ -16,13 +16,19 @@ class Biografi extends BaseController
     }
     public function bupati()
     {
-        $data['bupati'] = $this->BupatiModel->get_bupati();
+        $data = [
+            'title'  => 'Mahakam | Bupati',
+            'bupati' => $this->BupatiModel->get_bupati()
+        ];
         return view('biografi/bupati', $data);
     }
 
     public function wakil()
     {
-        $data['wakil'] = $this->WakilModel->getWakil();
+        $data = [
+            'title'  => 'Mahakam | Wakil',
+            'wakil' => $this->WakilModel->getWakil()
+        ];
         return view('biografi/wakil', $data);
     }
     //--------------------------------------------------------------------

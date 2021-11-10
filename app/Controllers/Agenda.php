@@ -14,7 +14,7 @@ class Agenda extends BaseController
     public function index()
     {
         $data = [
-            'title'             => 'Agenda',
+            'title'             => 'Mahakam | Agenda',
             // 'agenda'            => $this->AgendaModel->paginate(5, 'agenda'),
             'agenda'            => $this->AgendaModel->getAgenda(),
             'pager'             => $this->AgendaModel->pager,
@@ -26,7 +26,8 @@ class Agenda extends BaseController
     public function p($slug)
     {
         $data = [
-            'agenda' =>  $this->AgendaModel->getAgenda($slug),
+            'title'             =>  'Mahakam | Membangun Mahakam Ulu Untuk Semua Sejahtera Berkeadilan',
+            'agenda'            =>  $this->AgendaModel->getAgenda($slug),
             'getAgendaRecen'    => $this->AgendaModel->getAgendaRcent()
         ];
         return view('blogpost/index', $data);

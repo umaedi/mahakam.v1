@@ -1,4 +1,4 @@
-<?php $this->extend('layouts/template1') ?>
+<?php $this->extend('layouts/template_blog') ?>
 
 <?php $this->section('content') ?>
 <div class="container my-5">

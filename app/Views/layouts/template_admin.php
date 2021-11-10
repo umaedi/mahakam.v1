@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Mahakam</title>
+    <title><?= $title; ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="<?= base_url(); ?>/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -19,7 +19,9 @@
     <link href="<?= base_url(); ?>/assets/vendor/css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/select2-4.0.6-rc.1/dist/css/select2.min.css">
-    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js"></script>
+    <link rel="styleseeht" href="<?= base_url(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.css">
+    <script src="https://cdn.ckeditor.com/ckeditor5/18.0.0/classic/ckeditor.js">
+    </script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="shortcut icon" href="<?= base_url(); ?>/assets/img/logo/favicon.png" type="image/x-icon">
     <style>
@@ -109,9 +111,6 @@
     <!-- plugin datatable -->
     <script src="<?= base_url(); ?>/assets/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="<?= base_url(); ?>/assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="<?= base_url(); ?>/assets/js/demo/datatables-demo.js"></script>
 
     <script>
         ClassicEditor
