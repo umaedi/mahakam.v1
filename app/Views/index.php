@@ -14,7 +14,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-2">
                         <div class="icon-user" data-bs-toggle="tooltip" data-bs-placement="left" title="Sistem Informasi Administrasi Kepala Daerah & DPRD">
                             <div class=" card box-item-image" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
-                                <a href="<?= base_url(); ?>/administrator">
+                                <a href="<?= base_url(); ?>/login">
                                     <img data-src=" <?= base_url(); ?>/assets/img/layanan/user.jpg" class="lazyload card-img-top" alt="bupati mahakam" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5>SIKDAD</h5>

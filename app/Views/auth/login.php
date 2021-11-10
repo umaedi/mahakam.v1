@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $title; ?> - Login</title>
+    <title>Mahakam | Login</title>
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url(); ?>/assets/vendor/css/sb-admin-2.min.css" rel="stylesheet">
@@ -25,21 +25,26 @@
                         <img src="<?= base_url(); ?>/assets/img/logo/logo-mahakam.png" width="35%">
                         <h1 class="h4 text-gray-900">MAHAKAM</h1>
                         <p>Silahkan login menggunakan email dan password Anda</p>
+                        <?= view('Myth\Auth\Views\_message_block') ?>
                     </div>
-                    <form action="/auth/login" method="post" class="user">
+                    <form action="<?= route_to('login') ?>" method="post" class="user">
                         <?php csrf_field() ?>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control <?= (session()->getFlashdata('msg')) ? 'is-invalid' : ''; ?>" id="email" autocomplete="of" name="email">
-                            <div class="invalid-feedback">
-                                Email tidak ditemukan
+
+                        <?php if ($config->validFields === ['email']) : ?>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control <?= session('errors.login') ? 'is-invalid' : ''; ?>" id="email" autocomplete="of" name="login">
+                                <div class="invalid-feedback">
+                                    <?= session('errors.login') ?>
+                                </div>
                             </div>
-                        </div>
+                        <?php endif ?>
+
                         <div class="form-group">
                             <label for="pass">Password</label>
-                            <input type="password" class="form-control <?= (session()->getFlashdata('pesan')) ? 'is-invalid' : ''; ?>" id="pass" name="password">
+                            <input type="password" class="form-control <?= session('errors.login') ? 'is-invalid' : ''; ?>" id="pass" name="password">
                             <div class="invalid-feedback">
-                                Password salah
+                                <?= session('errors.password') ?>
                             </div>
                         </div>
                         <div class="form-group">

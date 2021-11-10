@@ -34,14 +34,17 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/biografi', 'Biografi::bupati');
 $routes->get('/agenda', 'Agenda::index');
-$routes->get('/auth/login', 'Auth::index');
 $routes->get('/dokumen', 'Dokumen::index.php');
-$routes->get('/administrator', 'Administrator::index', ['filter' => 'auth']);
-$routes->delete('/administrator/(:num)', 'Administrator::delete_agenda/$1');
-$routes->delete('/administrator/dokumen/(:num)', 'Administrator::delete_dokumen/$1');
-$routes->get('/administrator/bupati/edit_bupati/(:num)', 'Administrator::edit_bupati/$1', ['filter' => 'auth']);
-$routes->get('/administrator/wakil_bupati', 'Administrator::wakil_bupati');
-$routes->get('/administrator/wakil/edit_wakil/(:num)', 'Administrator::edit_wakil/$1');
+
+$routes->group('', ['filter' => 'login'], function ($routes) {
+	$routes->get('/administrator', 'Administrator::index');
+	$routes->delete('/administrator/(:num)', 'Administrator::delete_agenda/$1');
+	$routes->delete('/administrator/dokumen/(:num)', 'Administrator::delete_dokumen/$1');
+	$routes->get('/administrator/bupati/edit_bupati/(:num)', 'Administrator::edit_bupati/$1');
+	$routes->get('/administrator/wakil_bupati', 'Administrator::wakil_bupati');
+	$routes->get('/administrator/wakil/edit_wakil/(:num)', 'Administrator::edit_wakil/$1');
+});
+
 
 /**
  * --------------------------------------------------------------------

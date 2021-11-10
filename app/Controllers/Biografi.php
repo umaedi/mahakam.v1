@@ -18,6 +18,7 @@ class Biografi extends BaseController
     {
         $data = [
             'title'  => 'Mahakam | Bupati',
+            'profile'       => $this->UserModel->getUser(),
             'bupati' => $this->BupatiModel->get_bupati()
         ];
         return view('biografi/bupati', $data);
@@ -27,6 +28,7 @@ class Biografi extends BaseController
     {
         $data = [
             'title'  => 'Mahakam | Wakil',
+            'profile'       => $this->UserModel->getUser(),
             'wakil' => $this->WakilModel->getWakil()
         ];
         return view('biografi/wakil', $data);

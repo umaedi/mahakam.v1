@@ -61,12 +61,12 @@
            <div id="pengaturan" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                <div class="bg-white py-2 collapse-inner rounded">
                    <a class="collapse-item" href="<?= base_url(); ?>/administrator/profile">Profil</a>
-                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/banner">Banner</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/general_settings">Website</a>
                </div>
            </div>
        </li>
        <li class="nav-item">
-           <a class="nav-link" href="<?= base_url(); ?>/auth/logout" onclick="return confirm('Keluar Dari Admin Panel ?')">
+           <a class="nav-link" href="<?= base_url(); ?>/logout" onclick="return confirm('Keluar Dari Admin Panel ?')">
                <i class="fas fa-angle-double-left"></i>
                <span>Keluar</span></a>
        </li>

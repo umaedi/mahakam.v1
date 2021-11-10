@@ -240,7 +240,10 @@ div.contact .main .item p {
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  width: 300px;
+  width: 350px;
+}
+.contact .main .addres {
+  width: 400px;
 }
 
 .contact .main .item i {

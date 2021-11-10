@@ -11,18 +11,18 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="/administrator/update_profile/<?= $user['user_id']; ?>" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="imgLama" value="<?= $user['img']; ?>">
-                        <input type="hidden" name="user_id" value="<?= $user['user_id']; ?>">
+                    <form action="/administrator/update_profile/<?= $user['id']; ?>" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="imgLama" value="<?= $user['user_image']; ?>">
+                        <input type="hidden" name="id" value="<?= $user['id']; ?>">
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label for="pass" class="font-weight-bold">Foto profil</label>
-                                    <img data-src="<?= base_url(); ?>/assets/img/profile/<?= $user['img']; ?>" class="lazyload img-thumbnail img-preview">
+                                    <img data-src="<?= base_url(); ?>/assets/img/profile/<?= $user['user_image']; ?>" class="lazyload img-thumbnail img-preview">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input <?= $validation->hasError('profile_image') ? 'is-invalid' : ''; ?>" id="customFile" name="profile_image" onchange="previewImg()">
+                                        <input type="file" class="custom-file-input <?= $validation->hasError('user_image') ? 'is-invalid' : ''; ?>" id="customFile" name="user_image" onchange="previewImg()">
                                         <div id="validationServer03Feedback" class="invalid-feedback">
-                                            <?= $validation->getError('profile_image'); ?>
+                                            <?= $validation->getError('user_image'); ?>
                                         </div>
                                         <label class="custom-file-label" for="customFile">Pilih file</label>
                                     </div>
@@ -31,14 +31,14 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="nama" class="font-weight-bold">Ganti nama pengguna dan email</label>
-                                    <input type="text" class="form-control <?= $validation->hasError('user_name') ? 'is-invalid' : ''; ?>" id="nama" value="<?= $user['user_name']; ?>" name="user_name">
+                                    <input type="text" class="form-control <?= $validation->hasError('user_name') ? 'is-invalid' : ''; ?>" id="nama" value="<?= $user['username']; ?>" name="user_name">
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('user_name'); ?>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control <?= $validation->hasError('user_email') ? 'is-invalid' : ''; ?>" id="email" value="<?= $user['user_email']; ?>" name="user_email">
+                                    <input type="email" class="form-control <?= $validation->hasError('user_email') ? 'is-invalid' : ''; ?>" id="email" value="<?= $user['email']; ?>" name="user_email">
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('user_email'); ?>
                                     </div>

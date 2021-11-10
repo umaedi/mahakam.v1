@@ -9,6 +9,7 @@ use \App\Models\WakilModel;
 use \App\Models\KategoriModel;
 use \App\Models\BannerModel;
 use \App\Models\UserModel;
+use \App\Models\GeneralSetting;
 
 class Administrator extends BaseController
 {
@@ -19,6 +20,7 @@ class Administrator extends BaseController
     protected $DokumenModel;
     protected $bannerModel;
     protected $UserModel;
+    protected $GeneralSettings;
     public function __construct()
     {
         $this->BupatiModel = new BupatiModel();
@@ -28,12 +30,13 @@ class Administrator extends BaseController
         $this->DokumenModel = new DokumenModel();
         $this->bannerModel = new BannerModel();
         $this->UserModel = new UserModel();
+        $this->GeneralSettings = new GeneralSetting();
     }
     public function index()
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'agenda'            => $this->AgendaModel->getAgendaRcent(),
             'dokumen'           => $this->DokumenModel->getDocumenLimit(),
             'count_document'    => $this->DokumenModel->counAllDocument(),
@@ -42,22 +45,55 @@ class Administrator extends BaseController
         return view('administrator/index', $data);
     }
 
-    public function banner()
+    public function general_settings()
     {
         $data = [
-            'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
-            'validation' => \Config\Services::validation(),
-            'banner' => $this->bannerModel->getBanner()
+            'title'         => 'Mahakam | Pengaturan umum',
+            'profile'       => $this->UserModel->getUser(),
+            'validation'    => \Config\Services::validation(),
+            'banner'        => $this->bannerModel->getBanner(),
+            'settings'      => $this->GeneralSettings->getSettings()
         ];
-        return view('administrator/banner', $data);
+        return view('administrator/general', $data);
+    }
+
+    public function edit_genralSettings($id)
+    {
+        $data = [
+            'title'         => 'Mahakam | Edit pengaturan',
+            'profile'       => $this->UserModel->getUser(),
+            'validation'    => \Config\Services::validation(),
+            'banner'        => $this->bannerModel->getBanner(),
+            'settings'      => $this->GeneralSettings->getSettings($id)
+        ];
+        return view('administrator/edit_pengaturan', $data);
+    }
+
+    public function update_generalSettings($id)
+    {
+        $this->GeneralSettings->save([
+            'id'                => $id,
+            'website_name'      => $this->request->getVar('website_name'),
+            'slogan'            => $this->request->getVar('slogan'),
+            'welcome_msg'       => $this->request->getVar('welcome_msg'),
+            'addres'            => $this->request->getVar('addres'),
+            'contact'           => $this->request->getVar('contact'),
+            'email'             => $this->request->getVar('email')
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Pengaturan umum berhasil diubah',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/general_settings');
     }
 
     public function edit_banner($id)
     {
         $data = [
-            'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'title'             => 'Mahakam | Edit banner',
+            'profile'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'banner'        => $this->bannerModel->getBanner($id)
         ];
@@ -66,55 +102,55 @@ class Administrator extends BaseController
 
     public function update_banner($id)
     {
-        if (!$this->validate([
-            'img_banner'    => [
-                'rules'     => 'uploaded[img_banner]|mime_in[img_banner,image/jpg,image/jpeg,image/png]|max_size[img_banner,1024]|max_dims[img_banner,1920,1079]',
-                'errors'    => [
-                    'uploaded'  => 'Banner wajib dipilih',
-                    'max_size'  => 'Ukuran gambar lebih dari 2MB',
-                    'mime_in'   => 'Yang Anda upload bukan gambar',
-                    'max_dims'  => 'Pastikan ukuran gambar 1920 x 1079'
-                ]
-            ],
-            'bupati'    => [
-                'rules'     => 'uploaded[bupati]|mime_in[bupati,image/png]|max_size[bupati,1024]',
-                'errors'    => [
-                    'uploaded'  => 'Banner wajib dipilih',
-                    'max_size'  => 'Ukuran gambar lebih dari 2MB',
-                    'mime_in'   => 'Format gambar harus png',
-                ]
-            ],
-            'wakil'    => [
-                'rules'     => 'uploaded[wakil]|mime_in[wakil,image/png]|max_size[wakil,1024]',
-                'errors'    => [
-                    'uploaded'  => 'Banner wajib dipilih',
-                    'max_size'  => 'Ukuran gambar lebih dari 2MB',
-                    'mime_in'   => 'Format gambar harus png',
-                ]
-            ],
-        ]))
-            return redirect()->to('/administrator/edit_banner/' . $this->request->getVar('id'))->withInput();
+        // if (!$this->validate([
+        //     'img_banner'    => [
+        //         'rules'     => 'uploaded[img_banner]|mime_in[img_banner,image/jpg,image/jpeg,image/png]|max_size[img_banner,1024]|max_dims[img_banner,1920,1079]',
+        //         'errors'    => [
+        //             'uploaded'  => 'Banner wajib dipilih',
+        //             'max_size'  => 'Ukuran gambar lebih dari 2MB',
+        //             'mime_in'   => 'Yang Anda upload bukan gambar',
+        //             'max_dims'  => 'Pastikan ukuran gambar 1920 x 1079'
+        //         ]
+        //     ],
+        //     'bupati'    => [
+        //         'rules'     => 'uploaded[bupati]|mime_in[bupati,image/png]|max_size[bupati,1024]',
+        //         'errors'    => [
+        //             'uploaded'  => 'Banner wajib dipilih',
+        //             'max_size'  => 'Ukuran gambar lebih dari 2MB',
+        //             'mime_in'   => 'Format gambar harus png',
+        //         ]
+        //     ],
+        //     'wakil'    => [
+        //         'rules'     => 'uploaded[wakil]|mime_in[wakil,image/png]|max_size[wakil,1024]',
+        //         'errors'    => [
+        //             'uploaded'  => 'Banner wajib dipilih',
+        //             'max_size'  => 'Ukuran gambar lebih dari 2MB',
+        //             'mime_in'   => 'Format gambar harus png',
+        //         ]
+        //     ],
+        // ]))
+        //     return redirect()->to('/administrator/edit_banner/' . $this->request->getVar('id'))->withInput();
 
         $img_bupati = $this->request->getFile('bupati');
         $img_wakil = $this->request->getFile('wakil');
         $img_utama = $this->request->getFile('img_banner');
 
         if ($img_bupati->getError() == 4) {
-            $img_name_bupati = $this->request->getVar('imgLama');
+            $img_name_bupati = $this->request->getVar('imgLama1');
         } else {
             $img_name_bupati = $img_bupati->getRandomName();
             $img_bupati->move('assets/img/banner', $img_name_bupati);
             // unlink('assets/img/banner/' . $this->request->getVar('imgLama'));
         }
         if ($img_wakil->getError() == 4) {
-            $img_name_wakil = $this->request->getVar('imgLama');
+            $img_name_wakil = $this->request->getVar('imgLama2');
         } else {
             $img_name_wakil = $img_wakil->getRandomName();
             $img_wakil->move('assets/img/banner', $img_name_wakil);
             // unlink('assets/img/banner/' . $this->request->getVar('imgLama'));
         }
         if ($img_utama->getError() == 4) {
-            $img_banner = $this->request->getVar('imgLama');
+            $img_banner = $this->request->getVar('imgLama3');
         } else {
             $img_banner = $img_utama->getRandomName();
             $img_utama->move('assets/img/banner', $img_banner);
@@ -137,62 +173,14 @@ class Administrator extends BaseController
         icon: 'success'
         });
         </script>");
-        return redirect()->to('/administrator/banner');
+        return redirect()->to('/administrator/general_settings');
     }
-
-    // public function tambah_banner()
-    // {
-    //     $data = [
-    //         'validation' => \Config\Services::validation()
-    //     ];
-    //     return view('administrator/tambah_banner', $data);
-    // }
-    // public function save_banner()
-    // {
-    //     if (!$this->validate([
-    //         'kategori'      => [
-    //             'rules'     => 'required',
-    //             'errors'    => [
-    //                 'required'  => 'Kategori wajib dipilih'
-    //             ]
-    //         ],
-    //         'img_banner'    => [
-    //             'rules'     => 'uploaded[img_banner]|mime_in[img_banner,image/jpg,image/jpeg,image/png]|max_size[img_banner,1024]|max_dims[img_banner,1920,1079]',
-    //             'errors'    => [
-    //                 'uploaded'  => 'Banner wajib dipilih',
-    //                 'max_size'  => 'Ukuran gambar lebih dari 2MB',
-    //                 'mime_in'   => 'Yang Anda upload bukan gambar',
-    //                 'max_dims'  => 'Pastikan ukuran gambar 1920 x 1079'
-    //             ]
-    //         ],
-    //     ])) {
-    //         return redirect()->to('/administrator/banner')->withInput();
-    //     }
-
-    //     $img_banner = $this->request->getFile('img_banner');
-    //     $img_name = $img_banner->getRandomName();
-    //     $img_banner->move('assets/img/banner', $img_name);
-
-
-    //     $this->bannerModel->save([
-    //         'url_banner'     => $this->request->getVar('url_banner'),
-    //         'img_banner'    => $img_name,
-    //         'category'      => $this->request->getVar('kategori')
-    //     ]);
-    //     session()->setFlashdata('pesan', "<script>
-    //     swal({
-    //     text: 'Banner berhasil diubah',
-    //     icon: 'success'
-    //     });
-    //     </script>");
-    //     return redirect()->to('/administrator/banner');
-    // }
 
     public function bupati()
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'bupati' => $this->BupatiModel->get_bupati()
         ];
         return view('administrator/bupati', $data);
@@ -202,6 +190,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
+            'profile'       => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'bupati'        => $this->BupatiModel->get_bupati($id)
         ];
@@ -337,7 +326,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'wakil' => $this->WakilModel->getWakil()
         ];
         return view('administrator/wakil_bupati', $data);
@@ -347,7 +336,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'validation' => \Config\Services::validation(),
             'wakil'      => $this->WakilModel->getWakil($id)
         ];
@@ -487,7 +476,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'agenda' => $this->AgendaModel->getAgenda()
         ];
         return view('administrator/agenda', $data);
@@ -497,6 +486,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
+            'user'              => $this->UserModel->getUser(),
             'validation' => \Config\Services::validation(),
             'kategori'   => $this->KategoriModel->getKategori()
         ];
@@ -568,7 +558,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'edit_agenda'   => $this->AgendaModel->getAgenda($id),
             'kategori'      => $this->KategoriModel->getKategori()
@@ -640,7 +630,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'validation' => \Config\Services::validation(),
             'kategori'   => $this->KategoriModel->getKategori(),
         ];
@@ -702,7 +692,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'dokumen' => $this->DokumenModel->get_dokumen(),
         ];
@@ -820,7 +810,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'banner'        => $this->bannerModel->findAll(),
             'user'          => $this->UserModel->getUser()
@@ -828,18 +818,18 @@ class Administrator extends BaseController
         return view('administrator/profile', $data);
     }
 
-    public function edit_profile($user_id)
+    public function edit_profile($id)
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'user'              => $this->UserModel->getUser(),
-            'validation'    => \Config\Services::validation(),
-            'user'          => $this->UserModel->getUser($user_id)
+            'profile'              => $this->UserModel->getUser(),
+            'validation'        => \Config\Services::validation(),
+            'user'              => $this->UserModel->getUser($id)
         ];
         return view('administrator/edit_profile', $data);
     }
 
-    public function update_profile($user_id)
+    public function update_profile($id)
     {
         if (!$this->validate([
             'user_name'     => [
@@ -854,17 +844,17 @@ class Administrator extends BaseController
                     'required'  => 'Email wajib wajib diisi'
                 ]
             ],
-            'profile_image'     => [
-                'rules'         => 'mime_in[profile_image,image/png,image/jpg]|max_size[profile_image,2048]',
+            'user_image'     => [
+                'rules'         => 'max_size[user_image,2048]|mime_in[user_image,image/jpg,image/jpeg,image/png]',
                 'errors'        => [
                     'mime_in'   => 'Yang anda upload bukan gambar',
                     'max_size'  => 'Ukuran gambar lebih dari 2 MB'
                 ]
             ],
         ])) {
-            return redirect()->to('/administrator/edit_profile/' . $this->request->getVar('user_id'))->withInput();
+            return redirect()->to('/administrator/edit_profile/' . $this->request->getVar('id'))->withInput();
         }
-        $img = $this->request->getFile('profile_image');
+        $img = $this->request->getFile('user_image');
         if ($img->getError() == 4) {
             $imgName = $this->request->getVar('imgLama');
         } else {
@@ -874,10 +864,10 @@ class Administrator extends BaseController
         }
 
         $this->UserModel->save([
-            'user_id'       => $user_id,
-            'user_name'     => $this->request->getVar('user_name'),
-            'user_email'    => $this->request->getVar('user_email'),
-            'img'           => $imgName
+            'id'            => $id,
+            'username'      => $this->request->getVar('user_name'),
+            'email'         => $this->request->getVar('user_email'),
+            'user_image'    => $imgName
         ]);
         session()->setFlashdata('pesan', "<script>
         swal({
@@ -885,7 +875,7 @@ class Administrator extends BaseController
         icon: 'success'
         });
         </script>");
-        return redirect()->to('/administrator/profil');
+        return redirect()->to('/administrator/profile');
     }
 
     public function update_password()
@@ -918,7 +908,7 @@ class Administrator extends BaseController
 
         $user_data = $this->UserModel->getUser();
         foreach ($user_data as $data);
-        $user_id = $data['user_id'];
+        $id = $data['id'];
         $password_lama = $this->request->getVar('password_lama');
         if (!password_verify($password_lama, $data['user_password'])) {
             session()->setFlashdata('msg', 'Password lama salah');
@@ -929,7 +919,7 @@ class Administrator extends BaseController
         }
 
         $this->UserModel->save([
-            'user_id'    => $user_id,
+            'user_id'    => $id,
             'user_password' => $paswordhas,
         ]);
         session()->setFlashdata('pesan', "<script>

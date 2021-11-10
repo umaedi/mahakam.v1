@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h1 class="h3 mb-0 text-gray-800">Banner bupati</h1>
-                            <a href="<?= base_url(); ?>/administrator/banner" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url(); ?>/administrator/general_settings" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -43,7 +43,7 @@
                     <div class="card-header">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h1 class="h3 mb-0 text-gray-800">Banner wakil bupati</h1>
-                            <a href="<?= base_url(); ?>/administrator/banner" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url(); ?>/administrator/general_settings" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -78,7 +78,7 @@
                     <div class="card-header">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h1 class="h3 mb-0 text-gray-800">Banner utama</h1>
-                            <a href="<?= base_url(); ?>/administrator/banner" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url(); ?>/administrator/general_settings" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -109,5 +109,64 @@
                 </div>
             </div>
         <?php endforeach; ?>
+
+        <form action="<?= base_url(); ?>/administrator/update_generalSettings/<?= $settings['id']; ?>" method="post">
+            <div class="col-md-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header">
+                        <div class="d-sm-flex align-items-center justify-content-between">
+                            <h1 class="h3 mb-0 text-gray-800">Pengaturan umum</h1>
+                            <a href="<?= base_url(); ?>/administrator/general_settings" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nama website</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="website_name" value="<?= $settings['website_name']; ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Slogan</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="slogan" value="<?= $settings['slogan']; ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Welcome msg</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="welcome_msg"><?= $settings['welcome_msg']; ?> </textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Alamat</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="addres" value="<?= $settings['addres']; ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Contact</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="contact" value="<?= $settings['contact']; ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="email" value="<?= $settings['email']; ?>">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <button type="submit" id="btnBupati" class="btn btn-sm btn-info mt-2 edit-bupati">Simpan perubahan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
-    <?= $this->endSection(); ?>
+</div>
+<?= $this->endSection(); ?>
