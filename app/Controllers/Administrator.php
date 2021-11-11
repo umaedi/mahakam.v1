@@ -102,34 +102,34 @@ class Administrator extends BaseController
 
     public function update_banner($id)
     {
-        // if (!$this->validate([
-        //     'img_banner'    => [
-        //         'rules'     => 'uploaded[img_banner]|mime_in[img_banner,image/jpg,image/jpeg,image/png]|max_size[img_banner,1024]|max_dims[img_banner,1920,1079]',
-        //         'errors'    => [
-        //             'uploaded'  => 'Banner wajib dipilih',
-        //             'max_size'  => 'Ukuran gambar lebih dari 2MB',
-        //             'mime_in'   => 'Yang Anda upload bukan gambar',
-        //             'max_dims'  => 'Pastikan ukuran gambar 1920 x 1079'
-        //         ]
-        //     ],
-        //     'bupati'    => [
-        //         'rules'     => 'uploaded[bupati]|mime_in[bupati,image/png]|max_size[bupati,1024]',
-        //         'errors'    => [
-        //             'uploaded'  => 'Banner wajib dipilih',
-        //             'max_size'  => 'Ukuran gambar lebih dari 2MB',
-        //             'mime_in'   => 'Format gambar harus png',
-        //         ]
-        //     ],
-        //     'wakil'    => [
-        //         'rules'     => 'uploaded[wakil]|mime_in[wakil,image/png]|max_size[wakil,1024]',
-        //         'errors'    => [
-        //             'uploaded'  => 'Banner wajib dipilih',
-        //             'max_size'  => 'Ukuran gambar lebih dari 2MB',
-        //             'mime_in'   => 'Format gambar harus png',
-        //         ]
-        //     ],
-        // ]))
-        //     return redirect()->to('/administrator/edit_banner/' . $this->request->getVar('id'))->withInput();
+        if (!$this->validate([
+            'img_banner'    => [
+                'rules'     => 'uploaded[img_banner]|mime_in[img_banner,image/jpg,image/jpeg,image/png]|max_size[img_banner,1024]|max_dims[img_banner,1920,1079]',
+                'errors'    => [
+                    'uploaded'  => 'Banner wajib dipilih',
+                    'max_size'  => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in'   => 'Yang Anda upload bukan gambar',
+                    'max_dims'  => 'Pastikan ukuran gambar 1920 x 1079'
+                ]
+            ],
+            'bupati'    => [
+                'rules'     => 'uploaded[bupati]|mime_in[bupati,image/png]|max_size[bupati,1024]',
+                'errors'    => [
+                    'uploaded'  => 'Banner wajib dipilih',
+                    'max_size'  => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in'   => 'Format gambar harus png',
+                ]
+            ],
+            'wakil'    => [
+                'rules'     => 'uploaded[wakil]|mime_in[wakil,image/png]|max_size[wakil,1024]',
+                'errors'    => [
+                    'uploaded'  => 'Banner wajib dipilih',
+                    'max_size'  => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in'   => 'Format gambar harus png',
+                ]
+            ],
+        ]))
+            return redirect()->to('/administrator/edit_banner/' . $this->request->getVar('id'))->withInput();
 
         $img_bupati = $this->request->getFile('bupati');
         $img_wakil = $this->request->getFile('wakil');

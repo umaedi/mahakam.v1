@@ -15,8 +15,8 @@ class Agenda extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Agenda',
-            // 'agenda'            => $this->AgendaModel->paginate(5, 'agenda'),
-            'agenda'            => $this->AgendaModel->getAgenda(),
+            'agenda'            => $this->AgendaModel->paginate(1, 'agenda'),
+            // 'agenda'            => $this->AgendaModel->getAgenda(),
             'pager'             => $this->AgendaModel->pager,
             'getAgendaRecen'    => $this->AgendaModel->getAgendaRcent()
         ];
