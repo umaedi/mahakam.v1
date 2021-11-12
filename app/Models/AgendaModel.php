@@ -10,6 +10,11 @@ class AgendaModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['nama_agenda', 'slug', 'tag', 'kategori', 'img', 'lokasi', 'tanggal', 'deskripsi'];
 
+    public function search($keyword)
+    {
+        return $this->table('agenda')->like('nama_agenda', $keyword);
+    }
+
     public function getAgenda($slug = false)
     {
         if ($slug == false) {

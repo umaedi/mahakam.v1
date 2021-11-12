@@ -9,7 +9,7 @@
                     <p>AGENDA TERBARU</p>
                 </div>
                 <?php foreach ($agenda as $a) : ?>
-                    <div class="card mb-3" style="max-width: 800px;">
+                    <div class="card mb-3 border-0" style="max-width: 800px;">
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <div class="img-beranda">
@@ -35,8 +35,8 @@
                     <div class="head-title">
                         <p>AGENDA BERIKUTNYA</p>
                     </div>
-                    <?php foreach ($getAgendaRecen as $ar) : ?>
-                        <div class="card mb-3" style="max-width: 400px;">
+                    <div class="card mb-3 border-0" style="max-width: 400px;">
+                        <?php foreach ($getAgendaRecen as $ar) : ?>
                             <a href="<?= base_url(); ?>/agenda/p/<?= $ar['slug']; ?>">
                                 <div class="row row-cols-2 mb-3 row-cols-md-2 g-0">
                                     <div class="col-sm-2 col-lg-2 col-lg-4 col-md-4">
@@ -53,8 +53,8 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">

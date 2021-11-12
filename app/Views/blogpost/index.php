@@ -52,7 +52,7 @@
                     <?php foreach ($getAgendaRecen as $a) : ?>
                         <div class="col">
                             <a href="<?= base_url(); ?>/agenda/p/<?= $a['slug']; ?>" style="color: #222;">
-                                <div class="card">
+                                <div class="card border-0">
                                     <div class="img-beranda">
                                         <img data-src="<?= base_url(); ?>/assets/img/blogpost/<?= $a['img']; ?>" class="lazyload card-img-top" alt="...">
                                     </div>
@@ -73,8 +73,8 @@
                     <div class="head-title">
                         <p>AGENDA BERIKUTNYA</p>
                     </div>
-                    <?php foreach ($getAgendaRecen as $ar) : ?>
-                        <div class="card mb-3" style="max-width: 400px;">
+                    <div class="card mb-3 border-0" style="max-width: 400px;">
+                        <?php foreach ($getAgendaRecen as $ar) : ?>
                             <a href="<?= base_url(); ?>/agenda/p/<?= $ar['slug']; ?>">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -91,8 +91,8 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>

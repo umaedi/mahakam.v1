@@ -13,6 +13,7 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url(); ?>/assets/vendor/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/img/logo/favicon.png" type="image/x-icon">
 
 </head>
 

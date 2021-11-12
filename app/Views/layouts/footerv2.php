@@ -1,28 +1,30 @@
 <footer>
-    <div class="contact">
-        <div class="main">
-            <div class="item">
-                <i class="fa fa-map-marker-alt"></i>
-                <p>Jl. Poros Ujoh Bilang – Long Bagun Kabupaten Mahakam Ulu, Kalimantan Timur</p>
+    <?php foreach ($settings as $s) : ?>
+        <div class="contact">
+            <div class="main">
+                <div class="item">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <p><?= $s['addres']; ?></p>
+                </div>
+                <a href="https://api.whatsapp.com/send/?phone=<?= $s['contact']; ?>&text&app_absent=0">
+                    <div class="item">
+                        <i class="fa fa-phone"></i>
+                        <p><?= $s['contact']; ?></p>
+                    </div>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=CllgCJlHmlWFwpjpSTjbKxdCKvcVrgQWpnKzJktJXRDhtFMwkDmXJJNXLFJrwFgRdkDTDrZNtkg">
+                    <div class="item">
+                        <i class="fa fa-envelope"></i>
+                        <p><?= $s['email']; ?></p>
+                    </div>
+                </a>
             </div>
-            <a href="https://api.whatsapp.com/send/?phone=62816850103&text&app_absent=0">
-                <div class="item">
-                    <i class="fa fa-phone"></i>
-                    <p>(+62) 85741492045</p>
-                </div>
-            </a>
-            <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=CllgCJlHmlWFwpjpSTjbKxdCKvcVrgQWpnKzJktJXRDhtFMwkDmXJJNXLFJrwFgRdkDTDrZNtkg">
-                <div class="item">
-                    <i class="fa fa-envelope"></i>
-                    <p>info@mahakamulukab.go.id</p>
-                </div>
-            </a>
         </div>
-    </div>
-    <div class="copyright">
-        <p class="mt-3">Copyright &copy; <span id="footer-cr-years"></span><?= date('Y'); ?> Mahakam | Developed by Newus</p>
-    </div>
-    <button id="back-to-top-btn"><i class="fas fa-angle-up"></i></button>
+        <div class="copyright">
+            <p class="mt-3">Copyright &copy; <span id="footer-cr-years"></span><?= date('Y'); ?> <?= $s['website_name']; ?> | Developed by Newus</p>
+        </div>
+        <button id="back-to-top-btn"><i class="fas fa-angle-up"></i></button>
+    <?php endforeach; ?>
 </footer>
 
 <script>
