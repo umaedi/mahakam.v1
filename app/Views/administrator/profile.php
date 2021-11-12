@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="nama" class="font-weight-bold">Ganti nama pengguna dan email</label>
+                                    <label for="nama" class="font-weight-bold">Edit profile</label>
                                     <input type="text" class="form-control <?= $validation->hasError('user_name') ? 'is-invalid' : ''; ?>" id="nama" value="<?= $u['username']; ?>" readonly>
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('user_name'); ?>
@@ -39,29 +39,16 @@
                             </div>
                         <?php endforeach; ?>
                         <div class="col-md-4 ml-5">
-                            <form action="/administrator/update_password" method="post">
+                            <form action="<?= route_to('forgot') ?>" method="post">
                                 <div class="form-group">
-                                    <label for="password_lama" class="font-weight-bold">Ganti password</label>
-                                    <input type="password" class="form-control <?= (session()->getFlashdata('msg')) ? 'is-invalid' : ''; ?>" id="password_lama" name="password_lama" placeholder="Masukan password lama">
+                                    <label for="email" class="font-weight-bold">Ganti password</label>
+                                    <?= view('Myth\Auth\Views\_message_block') ?>
+                                    <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" id="password_lama" name="email" placeholder="Masukan email">
                                     <div class="invalid-feedback">
-                                        <?= session()->getFlashdata('msg'); ?>
+                                        <?= session('errors.email') ?>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="password1">Password baru</label>
-                                    <input type="password" class="form-control <?= $validation->hasError('password1') ? 'is-invalid' : ''; ?>" id="password1" name="password1">
-                                    <div class="invalid-feedback">
-                                        <?= $validation->getError('password1'); ?>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="password2">Konfirmasi password</label>
-                                    <input type="password" class="form-control <?= $validation->hasError('password2') ? 'is-invalid' : ''; ?>" id="password2" name="password2">
-                                    <div class="invalid-feedback">
-                                        <?= $validation->getError('password2'); ?>
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-sm btn-info">Simpan perubahan</button>
+                                <button type="submit" class="btn btn-sm btn-info">Kirim permintaan</button>
                             </form>
                         </div>
                     </div>

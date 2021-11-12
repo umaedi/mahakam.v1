@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class UserModel extends Model
 {
     protected $table = 'users';
-    protected $allowedFields = ['username', 'email', 'user_image', 'password', 'created_at', 'updated_at'];
+    protected $allowedFields = ['username', 'user_image'];
     public function getUser($id = false)
     {
         if ($id == false) {

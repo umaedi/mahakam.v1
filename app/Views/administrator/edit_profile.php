@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="nama" class="font-weight-bold">Ganti nama pengguna dan email</label>
+                                    <label for="nama" class="font-weight-bold">Edit profile</label>
                                     <input type="text" class="form-control <?= $validation->hasError('user_name') ? 'is-invalid' : ''; ?>" id="nama" value="<?= $user['username']; ?>" name="user_name">
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('user_name'); ?>
@@ -38,7 +38,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" class="form-control <?= $validation->hasError('user_email') ? 'is-invalid' : ''; ?>" id="email" value="<?= $user['email']; ?>" name="user_email">
+                                    <input type="email" class="form-control <?= $validation->hasError('user_email') ? 'is-invalid' : ''; ?>" id="email" value="<?= $user['email']; ?>" readonly>
+                                    <div id="emailHelp" class="form-text">Email terdaftar tidak dapat edit !</div>
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('user_email'); ?>
                                     </div>
@@ -47,29 +48,16 @@
                             </div>
                     </form>
                     <div class="col-md-4 ml-5">
-                        <form action="/administrator/update_password">
+                        <form action="<?= route_to('forgot') ?>" method="post">
                             <div class="form-group">
                                 <label for="password_lama" class="font-weight-bold">Ganti password</label>
-                                <input type="password" class="form-control <?= $validation->hasError('password_lama') ? 'is-invalid' : ''; ?>" id="password_lama" name="password_lama" placeholder="Masukan password lama">
+                                <?= view('Myth\Auth\Views\_message_block') ?>
+                                <input type="password" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" id="password_lama" name="password_lama" placeholder="Masukan email">
                                 <div class="invalid-feedback">
-                                    <?= $validation->getError('password_lama'); ?>
+                                    <?= session('errors.email') ?>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="password_baru">Password baru</label>
-                                <input type="password" class="form-control <?= $validation->hasError('password_baru') ? 'is-invalid' : ''; ?>" id="password_baru" name="password_baru">
-                                <div class="invalid-feedback">
-                                    <?= $validation->getError('password_baru'); ?>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="konfirmasi_password">Konfirmasi password</label>
-                                <input type="password" class="form-control <?= $validation->hasError('konfirmasi_password') ? 'is-invalid' : ''; ?>" id="konfirmasi_password" name="konfirmasi_password">
-                                <div class="invalid-feedback">
-                                    <?= $validation->getError('konfirmasi_password'); ?>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-sm btn-info">Simpan perubahan</button>
+                            <button type="submit" class="btn btn-sm btn-info">Kirim permintaan</button>
                         </form>
                     </div>
                 </div>

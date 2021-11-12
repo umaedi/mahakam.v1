@@ -838,12 +838,6 @@ class Administrator extends BaseController
                     'required'  => 'Nama pengguna wajib diisi'
                 ]
             ],
-            'user_email'     => [
-                'rules'     => 'required',
-                'errors'    => [
-                    'required'  => 'Email wajib wajib diisi'
-                ]
-            ],
             'user_image'     => [
                 'rules'         => 'max_size[user_image,2048]|mime_in[user_image,image/jpg,image/jpeg,image/png]',
                 'errors'        => [
@@ -866,65 +860,11 @@ class Administrator extends BaseController
         $this->UserModel->save([
             'id'            => $id,
             'username'      => $this->request->getVar('user_name'),
-            'email'         => $this->request->getVar('user_email'),
             'user_image'    => $imgName
         ]);
         session()->setFlashdata('pesan', "<script>
         swal({
         text: 'Profil berhasil dihapus',
-        icon: 'success'
-        });
-        </script>");
-        return redirect()->to('/administrator/profile');
-    }
-
-    public function update_password()
-    {
-        if (!$this->validate([
-            'password_lama'     => [
-                'rules'         => 'required',
-                'errors'        => [
-                    'required'  => 'Password lama harus dimasukan',
-                ]
-            ],
-            'password1'         => [
-                'rules'         => 'required|min_length[3]|matches[password2]',
-                'errors'        => [
-                    'required'  => 'Password harus diisi',
-                    'min_length'    => 'Minimal panjang password 3 karakter',
-                    'matches'       => 'Konfirmasi password salah'
-                ]
-            ],
-            'password2'         => [
-                'rules'         => 'required|min_length[3]|matches[password1]',
-                'errors'        => [
-                    'required'  => 'Password harus diisi',
-                    'min_length'    => 'Minimal panjang password 3 karakter',
-                    'matches'       => 'Konfirmasi password salah'
-                ]
-            ]
-        ]))
-            return redirect()->to('/administrator/profile')->withInput();
-
-        $user_data = $this->UserModel->getUser();
-        foreach ($user_data as $data);
-        $id = $data['id'];
-        $password_lama = $this->request->getVar('password_lama');
-        if (!password_verify($password_lama, $data['user_password'])) {
-            session()->setFlashdata('msg', 'Password lama salah');
-            return redirect()->to('/administrator/profile')->withInput();
-        } else {
-            $password = $this->request->getVar('password1');
-            $paswordhas = password_hash($password, PASSWORD_DEFAULT);
-        }
-
-        $this->UserModel->save([
-            'user_id'    => $id,
-            'user_password' => $paswordhas,
-        ]);
-        session()->setFlashdata('pesan', "<script>
-        swal({
-        text: 'Pasword berhasil diubah',
         icon: 'success'
         });
         </script>");

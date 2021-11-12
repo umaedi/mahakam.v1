@@ -20,7 +20,7 @@
 <body class="bg-transparent">
     <div class="container">
         <div class="row justify-content-center mt-3">
-            <div class="col-xl-5 col-lg-12 col-md-9 col-sm-12">
+            <div class="col-lg-5 col-md-12 col-sm-12">
                 <div class="p-5">
                     <div class="text-center">
                         <img src="<?= base_url(); ?>/assets/img/logo/logo-mahakam.png" width="35%">
@@ -60,6 +60,10 @@
                             <button type="submit" class="btn" style="width: 100%; background-color: #748a53; color:#fff">Masuk</button>
                         </div>
                     </form>
+                    <hr>
+                    <?php if ($config->activeResetter) : ?>
+                        <p>Lupa password ?<a href="<?= route_to('forgot') ?>"> klik disini</a></p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
