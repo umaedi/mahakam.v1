@@ -3,12 +3,54 @@
 <div class="container-fluid">
     <section class="download">
         <div class="row justify-content-center">
-            <div class="col-lg-6 col-sm-12">
+            <div class="col-lg-7 col-sm-12">
                 <div class="list-download">
                     <div class="head-title">
                         <p>Download Dokumen</p>
                     </div>
-                    <table class="table table-responsive">
+                    <div class="row row-cols-1 row-cols-md-4 g-2">
+                        <div class="col">
+                            <div class="card border-0 shadow-sm box-item-image">
+                                <a href="">
+                                    <img src="<?= base_url(); ?>/assets/img/icon/tes.jpg" class="card-img-top" alt="..." width="50">
+                                    <div class="card-body">
+                                        <p class="card-title text-center">Adm KD & DPRD</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-0 shadow-sm box-item-image">
+                                <a href="">
+                                    <img src="<?= base_url(); ?>/assets/img/icon/tes.jpg" class="card-img-top" alt="..." width="50">
+                                    <div class="card-body">
+                                        <p class="card-title text-center">LPPD</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-0 shadow-sm box-item-image">
+                                <a href="">
+                                    <img src="<?= base_url(); ?>/assets/img/icon/tes.jpg" class="card-img-top" alt="..." width="50">
+                                    <div class="card-body">
+                                        <p class="card-title text-center">RLPPD</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col ">
+                            <div class="card border-0 shadow-sm box-item-image">
+                                <a href="">
+                                    <img src="<?= base_url(); ?>/assets/img/icon/tes.jpg" class="card-img-top" alt="..." width="50">
+                                    <div class="card-body">
+                                        <p class="card-title text-center">SPM</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <table class="table table-responsive">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -28,7 +70,7 @@
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
-                    </table>
+                    </table> -->
                 </div>
             </div>
         </div>

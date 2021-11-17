@@ -487,6 +487,7 @@ class Administrator extends BaseController
         $data = [
             'title'             => 'Mahakam | Administrator',
             'user'              => $this->UserModel->getUser(),
+            'profile'              => $this->UserModel->getUser(),
             'validation' => \Config\Services::validation(),
             'kategori'   => $this->KategoriModel->getKategori()
         ];

@@ -208,7 +208,7 @@ section.download {
 }
 section.download .list-download {
   margin-top: 120px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 section.download .btn-custom {
   background-color: #748a53 !important;

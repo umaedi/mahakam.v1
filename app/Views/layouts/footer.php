@@ -2,7 +2,7 @@
     <div class="container" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
         <div class="row justify-content-center mb-5">
             <div class="col">
-                <h4 class="text-center">Alamat Kantor Sekretariat Kabinet Mahulu</h4>
+                <h4 class="text-center">Sekretariat Kabupaten</h4>
                 <hr class="garis-layanan">
                 <div class="embed-responsive text-center">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7979.295087728073!2d115.22688199999999!3d0.530123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd90350b74562a2fa!2sKantor%20SETKAB%20Mahulu!5e0!3m2!1sid!2sid!4v1634525506843!5m2!1sid!2sid" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
