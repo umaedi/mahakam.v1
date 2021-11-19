@@ -49,7 +49,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'profile'              => $this->UserModel->getUser(),
+            'profile'           => $this->UserModel->getUser(),
             'agenda'            => $this->AgendaModel->getAgendaRcent(),
             'dokumen'           => $this->DokumenModel->getDocumenLimit(),
             'count_document'    => $this->DokumenModel->counAllDocument(),
