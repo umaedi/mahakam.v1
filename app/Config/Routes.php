@@ -36,7 +36,6 @@ $routes->get('/biografi', 'Biografi::bupati');
 $routes->get('/agenda', 'Agenda::index');
 $routes->get('/dokumen', 'Dokumen::index');
 $routes->get('/contact', 'Contact::contact');
-$routes->get('/profil', 'Profil::pengantar');
 
 $routes->group('', ['filter' => 'login'], function ($routes) {
 	$routes->get('/administrator', 'Administrator::index');
