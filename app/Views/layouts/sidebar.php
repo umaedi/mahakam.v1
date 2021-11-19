@@ -25,6 +25,20 @@
        <li class="nav-item">
            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                <i class="fas fa-user-friends"></i>
+               <span>Profil</span>
+           </a>
+           <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/pengantar">Kata Pengantar</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/struktur">Struktur Organisasi</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/tugas_pokok_dan_fungsi">Tugas pokok & Fungsi</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/wakil_bupati">Kontak Kami</a>
+               </div>
+           </div>
+       </li>
+       <!-- <li class="nav-item">
+           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+               <i class="fas fa-user-friends"></i>
                <span>Walikota</span>
            </a>
            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -33,7 +47,7 @@
                    <a class="collapse-item" href="<?= base_url(); ?>/administrator/wakil_bupati">Wakil Bupati</a>
                </div>
            </div>
-       </li>
+       </li> -->
        <hr class="sidebar-divider d-none d-md-block">
        <li class="nav-item">
            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#agenda" aria-expanded="true" aria-controls="collapseUtilities">
@@ -48,9 +62,28 @@
            </div>
        </li>
        <li class="nav-item">
-           <a class="nav-link" href="<?= base_url(); ?>/administrator/dokumen">
+           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#dokumen" aria-expanded="true" aria-controls="collapseUtilities">
                <i class="fas fa-file-pdf"></i>
-               <span>Dokumen</span></a>
+               <span>Dokumen</span>
+           </a>
+           <div id="dokumen" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/dokumen">Daftar dokumen</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/kategori_dokumen">Kategori</a>
+               </div>
+           </div>
+       </li>
+       <li class="nav-item">
+           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#user-management" aria-expanded="true" aria-controls="collapseUtilities">
+               <i class="fas fa-users-cog"></i>
+               <span>User management</span>
+           </a>
+           <div id="user-management" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+               <div class="bg-white py-2 collapse-inner rounded">
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/profile">Administrator</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/general_settings">Users</a>
+               </div>
+           </div>
        </li>
        <hr class="sidebar-divider d-none d-md-block">
        <li class="nav-item">

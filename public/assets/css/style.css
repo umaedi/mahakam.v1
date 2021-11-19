@@ -137,6 +137,7 @@ div.data-diri {
 /* Agenda */
 section.agenda {
   margin-top: 120px;
+  min-height: 90vh;
 }
 
 div.head-title {
@@ -324,4 +325,9 @@ div.recent-post div.border-dashes {
 }
 #share .whatsapp {
   background: #25d366;
+}
+
+.btn-custom {
+  background-color: #748a53 !important;
+  color: #fff;
 }

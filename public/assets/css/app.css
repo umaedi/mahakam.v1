@@ -6,7 +6,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
 }
 
 a {
@@ -63,8 +63,8 @@ div.bg-content .text-content a {
   color: #fff;
 }
 div.bg-content .text-border:hover {
-  color: #f2f2f2;
-  font-weight: bold;
+  color: #ddd;
+  transition: 0.1s;
 }
 
 .footer {

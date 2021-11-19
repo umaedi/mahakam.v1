@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use \App\Models\PengantarModel;
+use \App\Models\StrukturModel;
+use \App\Models\TugasFungsiModel;
 use \App\Models\BupatiModel;
 use \App\Models\AgendaModel;
 use \App\Models\DokumenModel;
@@ -10,9 +13,13 @@ use \App\Models\KategoriModel;
 use \App\Models\BannerModel;
 use \App\Models\UserModel;
 use \App\Models\GeneralSetting;
+use \App\Models\KategoriDokumen;
 
 class Administrator extends BaseController
 {
+    protected $PengantarModel;
+    protected $StrukturModel;
+    protected $TugasFungsiModel;
     protected $BupatiModel;
     protected $WakilModel;
     protected $AgendaModel;
@@ -21,8 +28,13 @@ class Administrator extends BaseController
     protected $bannerModel;
     protected $UserModel;
     protected $GeneralSettings;
+    protected $KategoriDokumen;
+
     public function __construct()
     {
+        $this->PengantarModel = new PengantarModel();
+        $this->StrukturModel = new StrukturModel();
+        $this->TugasFungsiModel = new TugasFungsiModel();
         $this->BupatiModel = new BupatiModel();
         $this->WakilModel = new WakilModel();
         $this->AgendaModel = new AgendaModel();
@@ -31,6 +43,7 @@ class Administrator extends BaseController
         $this->bannerModel = new BannerModel();
         $this->UserModel = new UserModel();
         $this->GeneralSettings = new GeneralSetting();
+        $this->KategoriDokumen = new KategoriDokumen();
     }
     public function index()
     {
@@ -43,6 +56,226 @@ class Administrator extends BaseController
             'count_agenda'      => $this->AgendaModel->countAgenda()
         ];
         return view('administrator/index', $data);
+    }
+
+    public function pengantar()
+    {
+        $data = [
+            'title' => 'Mahakam | Pengantar',
+            'profile'       => $this->UserModel->getUser(),
+            'validation'    => \Config\Services::validation(),
+            'pengantar'     => $this->PengantarModel->findAll()
+        ];
+        return view('administrator/pengantar', $data);
+    }
+
+    public function save_pengantar()
+    {
+        if (!$this->validate([
+            'judul_pengantar'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Judul pengantar wajib diisi',
+                ],
+            ],
+            'kata_pengantar'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Pengantar wajib diisi',
+                ],
+            ],
+            'logo_pengantar' => [
+                'rules' => 'max_size[logo_pengantar,1024]|mime_in[logo_pengantar,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in' => 'Yang Anda upload bukan gambar'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/administrator/pengantar')->withInput();
+        }
+
+        $img = $this->request->getFile('logo_pengantar');
+        if ($img->getError() == 4) {
+            $logoName = $this->request->getVar('imgLama');
+        } else {
+            $logoName = $img->getRandomName();
+            $img->move('assets/img/logo', $logoName);
+            unlink('assets/img/logo/' . $this->request->getVar('imgLama'));
+        }
+
+        $this->PengantarModel->save([
+            'judul' => $this->request->getVar('judul_pengantar'),
+            'pengantar' => $this->request->getVar('kata_pengantar'),
+            'logo'  => $logoName
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Kata Pengantar berhasil diubah',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/pengantar');
+    }
+
+    public function update_pengantar($id)
+    {
+        if (!$this->validate([
+            'judul_pengantar'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Judul pengantar wajib diisi',
+                ],
+            ],
+            'kata_pengantar'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Pengantar wajib diisi',
+                ],
+            ],
+            'logo_pengantar' => [
+                'rules' => 'max_size[logo_pengantar,1024]|mime_in[logo_pengantar,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in' => 'Yang Anda upload bukan gambar'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/administrator/pengantar/' . $this->request->getVar('id'))->withInput();
+        }
+
+        $img = $this->request->getFile('logo_pengantar');
+        if ($img->getError() == 4) {
+            $logoName = $this->request->getVar('imgLama');
+        } else {
+            $logoName = $img->getRandomName();
+            $img->move('assets/img/logo', $logoName);
+            unlink('assets/img/logo/' . $this->request->getVar('imgLama'));
+        }
+
+        $this->PengantarModel->save([
+            'id'    => $id,
+            'judul' => $this->request->getVar('judul_pengantar'),
+            'pengantar' => $this->request->getVar('kata_pengantar'),
+            'logo'  => $logoName
+        ]);
+
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Kata Pengantar berhasil diubah',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/pengantar');
+    }
+
+    public function struktur()
+    {
+        $data = [
+            'title' => 'Mahakam | Struktur Organisasi',
+            'profile'       => $this->UserModel->getUser(),
+            'validation'    => \Config\Services::validation(),
+            'struktur'      => $this->StrukturModel->getStruktur()
+        ];
+        return view('administrator/struktur', $data);
+    }
+
+    public function update_struktur($id)
+    {
+        if (!$this->validate([
+            'nama_struktur'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Pengantar wajib diisi',
+                ],
+            ],
+            'image_struktur' => [
+                'rules' => 'max_size[image_struktur,1024]|mime_in[image_struktur,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in' => 'Yang Anda upload bukan gambar'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/administrator/struktur/' . $this->request->getVar('id'))->withInput();
+        }
+
+        $img = $this->request->getFile('image_struktur');
+        if ($img->getError() == 4) {
+            $strukturImage = $this->request->getVar('imgLama');
+        } else {
+            $strukturImage = $img->getRandomName();
+            $img->move('assets/img/struktur', $strukturImage);
+            unlink('assets/img/struktur/' . $this->request->getVar('imgLama'));
+        }
+
+        $this->StrukturModel->save([
+            'id'    => $id,
+            'name'  => $this->request->getVar('nama_struktur'),
+            'image_struktur'    => $strukturImage
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Struktur organisasi berhasil diubah',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/struktur');
+    }
+
+    public function tugas_pokok_dan_fungsi()
+    {
+        $data = [
+            'title'         => 'Mahakam | Tugas pokok dan fungsi',
+            'profile'       => $this->UserModel->getUser(),
+            'validation'    => \Config\Services::validation(),
+            'tugas'         => $this->TugasFungsiModel->getTugas()
+        ];
+        return view('administrator/tugas_pokok', $data);
+    }
+
+    public function update_tugas_fungsi($id)
+    {
+        if (!$this->validate([
+            'nama_tugas'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Pengantar wajib diisi',
+                ],
+            ],
+            'logo' => [
+                'rules' => 'max_size[logo,1024]|mime_in[logo,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in' => 'Yang Anda upload bukan gambar'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/administrator/tugas_pokok_dan_fungsi/' . $this->request->getVar('id'))->withInput();
+        }
+
+        $img = $this->request->getFile('logo');
+        if ($img->getError() == 4) {
+            $logoName = $this->request->getVar('logoLama');
+        } else {
+            $logoName = $img->getRandomName();
+            $img->move('assets/img/logo', $logoName);
+            // unlink('assets/img/logo/' . $this->request->getVar('logoLama'));
+        }
+
+        $this->TugasFungsiModel->save([
+            'id'    => $id,
+            'name'  => $this->request->getVar('nama_tugas'),
+            'tugas_fungsi'  => $this->request->getVar('deskripsi_tugas'),
+            'logo'  => $logoName
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Tugas pokok dan fungsi berhasil diubah',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/tugas_pokok_dan_fungsi');
     }
 
     public function general_settings()
@@ -693,9 +926,10 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'profile'              => $this->UserModel->getUser(),
-            'validation'    => \Config\Services::validation(),
-            'dokumen' => $this->DokumenModel->get_dokumen(),
+            'profile'           => $this->UserModel->getUser(),
+            'validation'        => \Config\Services::validation(),
+            'dokumen'           => $this->DokumenModel->get_dokumen(),
+            'kategori'          => $this->KategoriDokumen->getKategoriDokumen()
         ];
         return view('administrator/dokumen', $data);
     }
@@ -713,6 +947,12 @@ class Administrator extends BaseController
                 'rules' => 'required',
                 'errors'    => [
                     'required'  => 'Tanggal wajib ditentukan'
+                ]
+            ],
+            'kategori'  => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Kategori wajib dipilih'
                 ]
             ],
             'file_dokumen'  => [
@@ -734,7 +974,8 @@ class Administrator extends BaseController
             'nama_file'     => $this->request->getVar('nama_file'),
             'slug'          => $slug,
             'tanggal'       => $this->request->getVar('tanggal'),
-            'file'          => $namaFile
+            'file'          => $namaFile,
+            'kategori'      => $this->request->getVar('kategori')
         ]);
         session()->setFlashdata('pesan', "<script>
         swal({
@@ -760,6 +1001,12 @@ class Administrator extends BaseController
                     'required' => 'Tanggal wajib ditentukan',
                 ],
             ],
+            'kategori'  => [
+                'rules' => 'required',
+                'errors'    => [
+                    'required'  => 'Kategori wajib dipilih'
+                ]
+            ],
             'file_dokumen'  => [
                 'rules' => 'max_size[file_dokumen,1024]',
                 'errors' => [
@@ -784,7 +1031,8 @@ class Administrator extends BaseController
             'nama_file'     => $this->request->getVar('nama_file'),
             'slug'          => $slug,
             'tanggal'       => $this->request->getVar('tanggal'),
-            'file'          => $this->request->getVar('file')
+            'file'          => $namaFile,
+            'kategori'      => $this->request->getVar('kategori')
         ]);
         session()->setFlashdata('pesan', "<script>
         swal({
@@ -807,10 +1055,115 @@ class Administrator extends BaseController
         return redirect()->to('/administrator/dokumen');
     }
 
+    public function kategori_dokumen()
+    {
+        $data = [
+            'title'      => 'Mahakam | Administrator',
+            'profile'    => $this->UserModel->getUser(),
+            'validation' => \Config\Services::validation(),
+            'kategori'   => $this->KategoriDokumen->getKategoriDokumen(),
+        ];
+        return view('administrator/kategori_dokumen', $data);
+    }
+
+    public function tambah_kategori_dokumen()
+    {
+        if (!$this->validate([
+            'nama_kategori'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Nama kategori wajib diisi',
+                ],
+            ],
+            'icon_kategori'  => [
+                'rules' => 'max_size[icon_kategori,1024]|mime_in[icon_kategori,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in'  => 'Yang Anda upload bukan gambar'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/administrator/kategori_dokumen/' . $this->request->getVar('id'))->withInput();
+        }
+
+        $file = $this->request->getFile('icon_kategori');
+        $namaFile = $file->getRandomName();
+        $file->move('assets/img/icon_kategori', $namaFile);
+
+        $slug = url_title($this->request->getVar('nama_kategori'), '-', true);
+        $this->KategoriDokumen->save([
+            'slug'              => $slug,
+            'nama_kategori'     => $this->request->getVar('nama_kategori'),
+            'icon_kategori'     => $namaFile
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Kategori baru berhasil ditambahkan',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/kategori_dokumen');
+    }
+
+    public function update_kategori_dokumen($id)
+    {
+        if (!$this->validate([
+            'nama_kategori'   => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required' => 'Nama kategori wajib diisi',
+                ],
+            ],
+            'icon_kategori'  => [
+                'rules' => 'max_size[icon_kategori,1024]|mime_in[icon_kategori,image/jpg,image/jpeg,image/png]',
+                'errors' => [
+                    'max_size' => 'Ukuran gambar lebih dari 2MB',
+                    'mime_in'  => 'Yang Anda upload bukan gambar'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/administrator/kategori_dokumen/' . $this->request->getVar('id'))->withInput();
+        }
+        $file = $this->request->getFile('icon_kategori');
+        if ($file->getError() == 4) {
+            $namaFile = $this->request->getVar('fileLama');
+        } else {
+            $namaFile = $file->getRandomName();
+            $file->move('assets/img/icon_kategori', $namaFile);
+            unlink('assets/img/icon_kategori/' . $this->request->getVar('fileLama'));
+        }
+        $slug = url_title($this->request->getVar('nama_kategori'), '-', true);
+        $this->KategoriDokumen->save([
+            'id'    => $id,
+            'slug'  => $slug,
+            'nama_kategori' => $this->request->getVar('nama_kategori'),
+            'icon_kategori' => $namaFile
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Kategori dokumen berhasil diubah',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/kategori_dokumen');
+    }
+
+    public function hapus_kategori_dokumen($id)
+    {
+        $this->KategoriDokumen->delete($id);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Kategori dokumen berhasil dihapus',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/kategori_dokumen');
+    }
+
     public function profile()
     {
         $data = [
-            'title'             => 'Mahakam | Administrator',
+            'title'         => 'Mahakam | Administrator',
             'profile'              => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'banner'        => $this->bannerModel->findAll(),

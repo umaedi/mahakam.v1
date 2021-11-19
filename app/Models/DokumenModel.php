@@ -8,14 +8,20 @@ class DokumenModel extends Model
 {
     protected $table = 'dokumen';
     protected $useTimestamps = true;
-    protected $allowedFields = ['nama_file', 'slug', 'file', 'tanggal'];
+    protected $allowedFields = ['nama_file', 'slug', 'file', 'kategori', 'tanggal'];
 
-    public function get_dokumen($slug = false)
+    public function get_dokumen($kategori = false)
     {
-        if ($slug == false) {
+        if ($kategori == false) {
             return $this->orderBy('id', 'DESC')->findAll();
         }
-        return $this->where(['slug' => $slug])->first();
+        return $this->where(['kategori' => $kategori])->first();
+    }
+
+    public function getDokumenByKategori($kategori)
+    {
+        $this->where(['kategori' => $kategori]);
+        return $this->get('dokumen')->row_array();
     }
 
     public function getDocumenLimit()

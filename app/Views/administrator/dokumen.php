@@ -3,7 +3,7 @@
 <div class="container-fluid">
     <div class="row">
         <?= session()->getFlashdata('pesan'); ?>
-        <div class="col-lg-4">
+        <div class="col-lg-4 mt-3">
             <div class="card shadow">
                 <div class="card-header">
                     <div class="d-sm-flex align-items-center justify-content-between">
@@ -23,6 +23,20 @@
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('nama_file'); ?>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Kategori</label>
+                                    <select class="form-control <?= ($validation->hasError('kategori')) ? 'is-invalid' : ''; ?>" id="exampleFormControlSelect1" name="kategori">
+                                        <div class="invalid-feedback">
+                                            <?= $validation->getError('kategori'); ?>
+                                        </div>
+                                        <option selected disabled value="0">--Pilih kategori--</option>
+                                        <?php foreach ($kategori as $k) : ?>
+                                            <option value="<?= $k['id']; ?>"><?= $k['nama_kategori']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -53,7 +67,7 @@
             <div class="card shadow">
                 <div class="card-header">
                     <div class="d-sm-flex align-items-center justify-content-between">
-                        <h1 class="h3 mb-0 text-gray-800 d-sm-inline">Dokumen diupload</h1>
+                        <h1 class="h3 mb-0 text-gray-800 d-sm-inline">Daftar Dokumen</h1>
                         <a href="<?= base_url(); ?>/administrator/dokumen" class="d-sm-inline mt-2 btn btn-sm btn-info"><i class="fas fa-plus"></i> Tambah</a>
                     </div>
                 </div>
@@ -63,6 +77,7 @@
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Nama Dokumen</th>
+                                <th scope="col">Kategori</th>
                                 <th scope="col">Tanggal Input</th>
                                 <th scope="col">Aksi</th>
                             </tr>
@@ -73,6 +88,7 @@
                                 <tr>
                                     <th scope="row"><?= $i++; ?></th>
                                     <td><?= $d['nama_file']; ?></td>
+                                    <td><?= $d['kategori']; ?></td>
                                     <td><?= $d['tanggal']; ?></td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-warning btn-edit" data-id="<?= $d['id']; ?>" data-nama="<?= $d['nama_file']; ?>" data-file="<?= $d['file']; ?>" data-slug="<?= $d['slug']; ?>" data-file="<?= $d['file']; ?>" data-tanggal="<?= $d['tanggal']; ?>"><i class="far fa-edit"></i></a>

@@ -88,6 +88,7 @@
                                     <th scope="col">No</th>
                                     <th scope="col">Nama Dokumen</th>
                                     <th scope="col">Tanggal</th>
+                                    <th scope="col">Kategori</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -97,6 +98,7 @@
                                     <tr>
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $d['nama_file']; ?></td>
+                                        <td><?= $d['tanggal']; ?></td>
                                         <td><?= $d['tanggal']; ?></td>
                                         <td><a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['slug']; ?>"><i class="fas fa-download text-gray-600"></i></a></td>
                                     </tr>

@@ -31,4 +31,9 @@ class Home extends BaseController
 		];
 		return view('index', $data);
 	}
+
+	public function contact()
+	{
+		return view('page/contact');
+	}
 }

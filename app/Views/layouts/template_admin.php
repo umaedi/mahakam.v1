@@ -145,6 +145,7 @@
         $(function() {
             $('.btn-edit-kategori').on('click', function() {
                 $('#tambahKategori').html('Edit kategori');
+                $('#btnChangeCategory').html('Simpan perubahan');
 
                 const id = $(this).data('id');
                 const nama = $(this).data('nama');
@@ -154,6 +155,74 @@
                 $('.namaKategori').val(nama);
             });
         });
+
+        $(function() {
+            $('.btn-edit-kategori-dokumen').on('click', function() {
+                $('#tambahKategori').html('Edit kategori');
+                $('#btnTambahKategori').html('Simpan perubahan');
+
+                const id = $(this).data('id');
+                const nama = $(this).data('nama');
+                const slug = $(this).data('slug');
+                const icon = $(this).data('file');
+                $('form').attr('action', '<?= base_url(); ?>/administrator/update_kategori_dokumen/'.concat(id));
+                $('.id').val(id);
+                $('.namaKategori').val(nama);
+                $('.slug').val(slug);
+                $('.fileLama').val(icon)
+            });
+        });
+
+        $(function() {
+            $('.btnPengantar').on('click', function() {
+
+                $('.judulPengantar').removeAttr('disabled');
+                $('.kataPengantar').removeAttr('disabled');
+
+                const id = $(this).data('id');
+                const imgLogo = $(this).data('logo');
+                const judul = $(this).data('judul');
+                const pengantar = $(this).data('pengantar');
+
+                $('form').attr('action', '<?= base_url(); ?>/administrator/update_pengantar/'.concat(id));
+                $('.judulPengantar').val(judul);
+                $('.imgLogo').val(imgLogo);
+                $('.kataPengantar').val(pengantar);
+            });
+        });
+
+        $(function() {
+            $('.btnStruktur').on('click', function() {
+                const id = $(this).data('id');
+                const name = $(this).data('name');
+                const image = $(this).data('image');
+
+                $('form').attr('action', '<?= base_url(); ?>/administrator/update_struktur/'.concat(id));
+                $('.strukturName').val(name);
+                $('.id').val(id);
+                $('.oldImage').val(image);
+
+            });
+        });
+
+        $(function() {
+            $('.btnTugas').on('click', function() {
+                $('.deskripsiTugas').removeAttr('disabled');
+                $('.judulTugas').removeAttr('disabled');
+
+                const id = $(this).data('id');
+                const name = $(this).data('name');
+                const logo = $(this).data('logo');
+                const tugas = $(this).data('tugas');
+
+                console.log(logo);
+                $('form').attr('action', '<?= base_url(); ?>/administrator/update_tugas_fungsi/'.concat(id));
+                $('id').val(id);
+                $('.logoLama').val(logo);
+                $('.judulTugas').val(name);
+                $('.deskripsiTugas').val(tugas);
+            })
+        })
 
         function previewImg() {
             const sampul = document.querySelector('#customFile');

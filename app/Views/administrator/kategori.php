@@ -20,7 +20,7 @@
                                 <?= $validation->getError('nama'); ?>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-sm btn-info">Tambah</button>
+                        <button type="submit" class="btn btn-sm btn-info" id="btnChangeCategory">Tambah</button>
                     </div>
                 </div>
             </div>
