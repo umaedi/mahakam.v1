@@ -14,7 +14,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-2">
                         <div class="icon-user" data-bs-toggle="tooltip" data-bs-placement="left" title="Sistem Informasi Administrasi Kepala Daerah & DPRD">
                             <div class=" card box-item-image border-0" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="100">
-                                <a href="<?= base_url(); ?>/login">
+                                <a href="http://sikd.mahakamulu-kab.id/">
                                     <img data-src=" <?= base_url(); ?>/assets/img/layanan/user.jpg" class="lazyload card-img-top" alt="bupati mahakam" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5>SIKDAD</h5>
@@ -86,16 +86,16 @@
                     <hr>
                     <div class="ms-3">
                         <li>
-                            <a class="text-border" href="">Kata Pengantar</a>
+                            <a class="text-border" href="<?= base_url(); ?>/profile/pengantar">Kata Pengantar</a>
                         </li>
                         <li>
-                            <a class="text-border" href="">Struktur Organisasi</a>
+                            <a class="text-border" href="<?= base_url(); ?>/profile/struktur">Struktur Organisasi</a>
                         </li>
                         <li>
-                            <a class="text-border" href="">Tugas Pokok & Fungsi Bagian Pemerintahan</a>
+                            <a class="text-border" href="<?= base_url(); ?>/profile/tugas_fungsi">Tugas Pokok & Fungsi Bagian Pemerintahan</a>
                         </li>
                         <li>
-                            <a class="text-border" href="">Kontak Kami</a>
+                            <a class="text-border" href="<?= base_url(); ?>/contact">Kontak Kami</a>
                         </li>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
                     <hr>
                     <div class="ms-3">
                         <li>
-                            <a class="text-border" href="">SIKDAD</a>
+                            <a class="text-border" href="https://sikd.mahakamulu-kab.id/login">SIKDAD</a>
                         </li>
                         <li>
                             <a class="text-border" href="">E-ELPPD</a>
@@ -124,7 +124,7 @@
                     <hr>
                     <div class="ms-3">
                         <li>
-                            <a href="">Belum ada agenda</a>
+                            <a href="<?= base_url(); ?>/agenda">Lihat Semua Agenda</a>
                         </li>
                     </div>
                 </div>

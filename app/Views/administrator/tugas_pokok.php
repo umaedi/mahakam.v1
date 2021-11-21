@@ -33,12 +33,13 @@
                                     <div class="invalid-feedback">
                                         <?= $validation->getError('nama_tugas'); ?>
                                     </div>
+                                    <small id="emailHelp" class="form-text text-muted">Hanya digunakan untu edit tugas pokok & fungsi</small>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="tugas">Tugas dan fungsi</label>
-                            <textarea class="deskripsiTugas form-control" id="tugas" name="deskripsi_tugas" rows="10" disabled><?= old('deskripsi_tugas'); ?></textarea>
+                            <textarea class="deskripsiTugas form-control" id="tugas" name="deskripsi_tugas" rows="10"><?= old('deskripsi_tugas'); ?></textarea>
                         </div>
                         <button type="submit" class="btn btn-sm btn-info"><i class="fas fa-globe"></i> Publish</button>
                     </div>

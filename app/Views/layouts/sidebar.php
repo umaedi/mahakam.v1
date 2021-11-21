@@ -32,7 +32,7 @@
                    <a class="collapse-item" href="<?= base_url(); ?>/administrator/pengantar">Kata Pengantar</a>
                    <a class="collapse-item" href="<?= base_url(); ?>/administrator/struktur">Struktur Organisasi</a>
                    <a class="collapse-item" href="<?= base_url(); ?>/administrator/tugas_pokok_dan_fungsi">Tugas pokok & Fungsi</a>
-                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/wakil_bupati">Kontak Kami</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/contact">Kontak Kami</a>
                </div>
            </div>
        </li>
@@ -81,7 +81,7 @@
            <div id="user-management" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                <div class="bg-white py-2 collapse-inner rounded">
                    <a class="collapse-item" href="<?= base_url(); ?>/administrator/profile">Administrator</a>
-                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/general_settings">Users</a>
+                   <a class="collapse-item" href="<?= base_url(); ?>/administrator/users">Users</a>
                </div>
            </div>
        </li>

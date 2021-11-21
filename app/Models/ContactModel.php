@@ -9,10 +9,10 @@ class ContactModel extends Model
     protected $table = 'contact';
     protected $useTimestamps = true;
     protected $allowedFields = ['name', 'email', 'subject', 'msg'];
-    public function getUser($id = false)
+    public function getContact($id = false)
     {
         if ($id == false) {
-            return $this->findAll();
+            return $this->orderBy('id', 'DESC')->findAll();
         } else {
             return $this->where(['id' => $id])->first();
         }

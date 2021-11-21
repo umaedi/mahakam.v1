@@ -18,15 +18,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1;
-                            foreach ($dokumen as $d) : ?>
-                                <tr>
-                                    <th scope="row"><?= $i++; ?></th>
-                                    <td><?= $d['nama_file']; ?></td>
-                                    <td class="text-center"><?= $d['tanggal']; ?></td>
-                                    <td><a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['slug']; ?> " class="btn btn-sm btn-custom"><i class="fas fa-cloud-download-alt"></i> Dwnload</a></td>
-                                </tr>
-                            <?php endforeach; ?>
+
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><?= $dokumen['nama_file']; ?></td>
+                                <td class="text-center"><?= $dokumen['tanggal']; ?></td>
+                                <td><a href="<?= base_url(); ?>/dokumen/download_file/<?= $dokumen['slug']; ?> " class="btn btn-sm btn-custom"><i class="fas fa-cloud-download-alt"></i> Dwnload</a></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

@@ -32,7 +32,7 @@
                        <div class="animation start-home"></div>
                    </li>
                    <li class="nav-item me-4">
-                       <a class="nav-link fw-bold" href="<?= base_url(); ?>/dokumen/download">Download</a>
+                       <a class="nav-link fw-bold" href="<?= base_url(); ?>/dokumen">Download</a>
                        <div class="animation start-home"></div>
                    </li>
                    <li class="nav-item">

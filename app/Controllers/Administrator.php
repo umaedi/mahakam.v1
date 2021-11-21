@@ -12,8 +12,10 @@ use \App\Models\WakilModel;
 use \App\Models\KategoriModel;
 use \App\Models\BannerModel;
 use \App\Models\UserModel;
+use \App\Models\UsersModel;
 use \App\Models\GeneralSetting;
 use \App\Models\KategoriDokumen;
+use \App\Models\ContactModel;
 
 class Administrator extends BaseController
 {
@@ -27,8 +29,10 @@ class Administrator extends BaseController
     protected $DokumenModel;
     protected $bannerModel;
     protected $UserModel;
+    protected $UsersModel;
     protected $GeneralSettings;
     protected $KategoriDokumen;
+    protected $ContactModel;
 
     public function __construct()
     {
@@ -42,8 +46,10 @@ class Administrator extends BaseController
         $this->DokumenModel = new DokumenModel();
         $this->bannerModel = new BannerModel();
         $this->UserModel = new UserModel();
+        $this->UsersModel = new UsersModel();
         $this->GeneralSettings = new GeneralSetting();
         $this->KategoriDokumen = new KategoriDokumen();
+        $this->ContactModel = new ContactModel();
     }
     public function index()
     {
@@ -1164,7 +1170,7 @@ class Administrator extends BaseController
     {
         $data = [
             'title'         => 'Mahakam | Administrator',
-            'profile'              => $this->UserModel->getUser(),
+            'profile'       => $this->UserModel->getUser(),
             'validation'    => \Config\Services::validation(),
             'banner'        => $this->bannerModel->findAll(),
             'user'          => $this->UserModel->getUser()
@@ -1176,9 +1182,9 @@ class Administrator extends BaseController
     {
         $data = [
             'title'             => 'Mahakam | Administrator',
-            'profile'              => $this->UserModel->getUser(),
+            'profile'           => $this->UserModel->getUser(),
             'validation'        => \Config\Services::validation(),
-            'user'              => $this->UserModel->getUser($id)
+            'user'              => $this->UserModel->getUserId($id)
         ];
         return view('administrator/edit_profile', $data);
     }
@@ -1218,10 +1224,118 @@ class Administrator extends BaseController
         ]);
         session()->setFlashdata('pesan', "<script>
         swal({
-        text: 'Profil berhasil dihapus',
+        text: 'Profil berhasil diubah',
         icon: 'success'
         });
         </script>");
         return redirect()->to('/administrator/profile');
+    }
+
+    public function users()
+    {
+        $data = [
+            'title'         => 'Mahakam | Administrator',
+            'profile'       => $this->UserModel->getUser(),
+            'validation'    => \Config\Services::validation(),
+            'users'         => $this->UsersModel->getUsers()
+        ];
+        return view('administrator/users', $data);
+    }
+
+    public function delete_user($id)
+    {
+        $this->UsersModel->delete($id);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'User berhasil dihapus',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/users');
+    }
+
+    public function edit_user($id)
+    {
+        $data = [
+            'title'             => 'Mahakam | Administrator',
+            'profile'           => $this->UserModel->getUser(),
+            'validation'        => \Config\Services::validation(),
+            'user'              => $this->UserModel->getUserId($id)
+        ];
+        return view('administrator/edit_user', $data);
+    }
+
+    public function update_user($id)
+    {
+        if (!$this->validate([
+            'user_name'     => [
+                'rules'     => 'required',
+                'errors'    => [
+                    'required'  => 'Nama pengguna wajib diisi'
+                ]
+            ],
+            'user_image'     => [
+                'rules'         => 'max_size[user_image,2048]|mime_in[user_image,image/jpg,image/jpeg,image/png]',
+                'errors'        => [
+                    'mime_in'   => 'Yang anda upload bukan gambar',
+                    'max_size'  => 'Ukuran gambar lebih dari 2 MB'
+                ]
+            ],
+        ])) {
+            return redirect()->to('/administrator/edit_user/' . $this->request->getVar('id'))->withInput();
+        }
+        $img = $this->request->getFile('user_image');
+        if ($img->getError() == 4) {
+            $imgName = $this->request->getVar('imgLama');
+        } else {
+            $imgName = $img->getRandomName();
+            $img->move('assets/img/profile', $imgName);
+            unlink('assets/img/profile/' . $this->request->getVar('imgLama'));
+        }
+        $this->UsersModel->save([
+            'id'            => $id,
+            'username'      => $this->request->getVar('user_name'),
+            'user_image'    => $imgName
+        ]);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Profil berhasil dihapus',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/users');
+    }
+
+    public function contact()
+    {
+        $data = [
+            'title'             => 'Mahakam | Administrator',
+            'profile'           => $this->UserModel->getUser(),
+            'validation'        => \Config\Services::validation(),
+            'contact'           => $this->ContactModel->getContact()
+        ];
+        return view('administrator/contact', $data);
+    }
+
+    public function replay_msg($id)
+    {
+        $data = [
+            'title'             => 'Mahakam | Administrator',
+            'profile'           => $this->UserModel->getUser(),
+            'contact'           => $this->ContactModel->getContact($id)
+        ];
+        return view('administrator/replay_msg', $data);
+    }
+
+    public function delete_msg($id)
+    {
+        $this->ContactModel->delete($id);
+        session()->setFlashdata('pesan', "<script>
+        swal({
+        text: 'Pesan berhasil dihapus',
+        icon: 'success'
+        });
+        </script>");
+        return redirect()->to('/administrator/contact');
     }
 }

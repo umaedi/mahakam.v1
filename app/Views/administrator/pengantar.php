@@ -27,18 +27,19 @@
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
                             <input type="text" class="judulPengantar form-control <?= ($validation->hasError('judul_pengantar')) ? 'is-invalid' : ''; ?>" id="judul" name="judul_pengantar" disabled>
+                            <small id="emailHelp" class="form-text text-muted">Hanya bisa digunakan untuk edit kata pengantar</small>
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 <?= $validation->getError('judul_pengantar'); ?>
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="kataPengantar" class="form-label">Kata pengantar</label>
-                            <textarea class="kataPengantar form-control <?= ($validation->hasError('kata_pengantar')) ? 'is-invalid' : ''; ?>" id="kataPengantar" rows="7" disabled name="kata_pengantar"></textarea>
+                            <textarea class="kataPengantar form-control <?= ($validation->hasError('kata_pengantar')) ? 'is-invalid' : ''; ?>" id="kataPengantar" rows="7" name="kata_pengantar"></textarea>
                             <div id="validationServer03Feedback" class="invalid-feedback">
                                 <?= $validation->getError('kata_pengantar'); ?>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-sm btn-info"><i class="fas fa-globe"></i> Publish</button>
+                        <button type="submit" class="btn btn-sm btn-info btnPublish"><i class="fas fa-globe"></i> Publish</button>
                     </form>
                 </div>
             </div>

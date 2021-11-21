@@ -12,7 +12,7 @@
                         <?php foreach ($kategori as $k) : ?>
                             <div class="col">
                                 <div class="card border-0 shadow-sm box-item-image">
-                                    <a href="<?= base_url(); ?>/dokumen/download/<?= $k['slug']; ?>">
+                                    <a href="<?= base_url(); ?>/dokumen/download/<?= $k['id']; ?>">
                                         <img src="<?= base_url(); ?>/assets/img/icon_kategori/<?= $k['icon_kategori']; ?>" class="card-img-top" alt="..." width="50">
                                         <div class="card-body">
                                             <p class="card-title text-center"><?= $k['nama_kategori']; ?></p>

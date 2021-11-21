@@ -10,18 +10,17 @@ class DokumenModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['nama_file', 'slug', 'file', 'kategori', 'tanggal'];
 
-    public function get_dokumen($kategori = false)
+    public function get_dokumen($id = false)
     {
-        if ($kategori == false) {
+        if ($id == false) {
             return $this->orderBy('id', 'DESC')->findAll();
         }
-        return $this->where(['kategori' => $kategori])->first();
+        return $this->where(['id' => $id])->first();
     }
 
-    public function getDokumenByKategori($kategori)
+    public function getDokumenByKategori($id)
     {
-        $this->where(['kategori' => $kategori]);
-        return $this->get('dokumen')->row_array();
+        return $this->where(['kategori' => $id])->first();
     }
 
     public function getDocumenLimit()

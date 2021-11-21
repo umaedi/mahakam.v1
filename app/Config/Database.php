@@ -36,7 +36,7 @@ class Database extends \CodeIgniter\Database\Config
 		'hostname' => 'localhost',
 		'username' => 'u1534957_admin',
 		'password' => '4?L0_^dLORHI',
-		'database' => 'u1534957_mahakam.v1',
+		'database' => 'u1534957_mahakam',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,

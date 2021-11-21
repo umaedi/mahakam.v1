@@ -9,11 +9,11 @@ class KategoriDokumen extends Model
     protected $table = 'kategori_dokumen';
     protected $useTimestamps = true;
     protected $allowedFields = ['icon_kategori', 'nama_kategori', 'slug'];
-    public function getKategoriDokumen($nama_kategori = false)
+    public function getKategoriDokumen($id = false)
     {
-        if ($nama_kategori == false) {
+        if ($id == false) {
             return $this->findAll();
         }
-        return $this->where(['nama_kategori' => $nama_kategori])->first();
+        return $this->where(['id' => $id])->first();
     }
 }

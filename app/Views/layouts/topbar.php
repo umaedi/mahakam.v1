@@ -7,7 +7,7 @@
 
        <!-- Topbar Navbar -->
        <div class="d-none d-sm-inline-block alert alert-success my-2 ml-2 alert-dismissible fade show" role="alert">
-           <strong>Hallo Admin, </strong> Selamat datang kembali, apa fokus utamamu hari ini
+           <strong>Hallo Admin, </strong> Selamat datang kembali, apa fokus utama Anda hari ini
            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                <span aria-hidden="true">&times;</span>
            </button>
@@ -36,27 +36,27 @@
 
            <div class="topbar-divider d-none d-sm-block"></div>
 
-           <?php foreach ($profile as $u) : ?>
-               <!-- Nav Item - User Information -->
-               <li class="nav-item dropdown no-arrow">
-                   <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $u['username']; ?></span>
-                       <img class="img-profile rounded-circle" src="<?= base_url(); ?>/assets/img/profile/<?= $u['user_image']; ?>">
+           <!-- <?php foreach ($profile as $u) : ?> -->
+           <!-- Nav Item - User Information -->
+           <li class="nav-item dropdown no-arrow">
+               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $u['username']; ?></span>
+                   <img class="img-profile rounded-circle" src="<?= base_url(); ?>/assets/img/profile/<?= $u['user_image']; ?>">
+               </a>
+               <!-- Dropdown - User Information -->
+               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                   <a class="dropdown-item" href="<?= base_url(); ?>/administrator/profile">
+                       <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                       Profile
                    </a>
-                   <!-- Dropdown - User Information -->
-                   <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                       <a class="dropdown-item" href="<?= base_url(); ?>/administrator/profile">
-                           <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                           Profile
-                       </a>
-                       <div class="dropdown-divider"></div>
-                       <a class="dropdown-item" href="<?= base_url(); ?>/logout" data-toggle="modal" data-target="#logoutModal">
-                           <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                           Logout
-                       </a>
-                   </div>
-               </li>
-           <?php endforeach; ?>
+                   <div class="dropdown-divider"></div>
+                   <a class="dropdown-item" href="<?= base_url(); ?>/logout" data-toggle="modal" data-target="#logoutModal">
+                       <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                       Logout
+                   </a>
+               </div>
+           </li>
+           <!-- <?php endforeach; ?> -->
 
        </ul>
 
