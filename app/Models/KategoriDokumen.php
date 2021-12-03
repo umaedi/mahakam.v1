@@ -8,7 +8,7 @@ class KategoriDokumen extends Model
 {
     protected $table = 'kategori_dokumen';
     protected $useTimestamps = true;
-    protected $allowedFields = ['icon_kategori', 'nama_kategori', 'slug'];
+    protected $allowedFields = ['icon_kategori', 'nama_kategori'];
     public function getKategoriDokumen($id = false)
     {
         if ($id == false) {

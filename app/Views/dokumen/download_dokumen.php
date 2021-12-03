@@ -18,7 +18,6 @@
                             </tr>
                         </thead>
                         <tbody>
-
                             <tr>
                                 <th scope="row">1</th>
                                 <td><?= $dokumen['nama_file']; ?></td>

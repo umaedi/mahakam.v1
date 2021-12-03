@@ -1096,9 +1096,7 @@ class Administrator extends BaseController
         $namaFile = $file->getRandomName();
         $file->move('assets/img/icon_kategori', $namaFile);
 
-        $slug = url_title($this->request->getVar('nama_kategori'), '-', true);
         $this->KategoriDokumen->save([
-            'slug'              => $slug,
             'nama_kategori'     => $this->request->getVar('nama_kategori'),
             'icon_kategori'     => $namaFile
         ]);
@@ -1290,8 +1288,13 @@ class Administrator extends BaseController
         } else {
             $imgName = $img->getRandomName();
             $img->move('assets/img/profile', $imgName);
+        }
+
+        $imgdirectory = $this->UsersModel->find($id);
+        if ($imgdirectory['user_image'] != 'default.jpg') {
             unlink('assets/img/profile/' . $this->request->getVar('imgLama'));
         }
+
         $this->UsersModel->save([
             'id'            => $id,
             'username'      => $this->request->getVar('user_name'),

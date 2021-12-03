@@ -22,24 +22,24 @@ class Dokumen extends BaseController
         $data = [
             'title'   => 'Mahakam | Dokumen',
             'settings'          => $this->GeneralSetting->getSettings(),
-            'kategori'  => $this->KategoriDokumen->getKategoriDokumen()
+            'kategori'  => $this->DokumenModel->get_dokumen()
         ];
         return view('dokumen/index', $data);
     }
 
-    public function download($id)
+    public function download($slug)
     {
         $data = [
-            'title'     => 'Mahakam | Download',
-            'dokumen'   => $this->DokumenModel->getDokumenByKategori($id),
-            'settings'  => $this->GeneralSetting->getSettings(),
+            'title' => 'Download dokumen',
+            'dokumen'   => $this->DokumenModel->getDokumenBySlug($slug),
+            'settings'          => $this->GeneralSetting->getSettings(),
         ];
         return view('dokumen/download_dokumen', $data);
     }
 
     function download_file($slug)
     {
-        $data = $this->DokumenModel->get_dokumen($slug);
+        $data = $this->DokumenModel->getDokumenBySlug($slug);
         return $this->response->download('assets/dokumen/' . $data['file'], null);
     }
     //--------------------------------------------------------------------

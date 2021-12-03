@@ -52,7 +52,7 @@
                             <div class="form-group">
                                 <label for="password_lama" class="font-weight-bold">Ganti password</label>
                                 <?= view('Myth\Auth\Views\_message_block') ?>
-                                <input type="password" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" id="password_lama" name="password_lama" placeholder="Masukan email">
+                                <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>" name="email" aria-describedby="emailHelp">
                                 <div class="invalid-feedback">
                                     <?= session('errors.email') ?>
                                 </div>

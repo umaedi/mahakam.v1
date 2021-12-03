@@ -25,6 +25,7 @@
                         <input type="hidden" name="password" value="12345678">
                         <input type="hidden" name="pass_confirm" value="12345678">
                         <input type="hidden" name="role" value="2">
+                        <input type="hidden" name="user_image" value="default.jpg">
                         <button type="submit" class="btn btn-sm btn-info">Tambah</button>
                     </form>
                 </div>

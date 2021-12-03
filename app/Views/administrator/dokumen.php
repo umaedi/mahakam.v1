@@ -34,7 +34,7 @@
                                         </div>
                                         <option selected disabled value="0">--Pilih kategori--</option>
                                         <?php foreach ($kategori as $k) : ?>
-                                            <option value="<?= $k['id']; ?>"><?= $k['nama_kategori']; ?></option>
+                                            <option id="kategori" value="<?= $k['id']; ?>"><?= $k['nama_kategori']; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -84,20 +84,20 @@
                         </thead>
                         <tbody>
                             <?php $i = 1;
-                            foreach ($dokumen as $d) : ?>
+                            foreach ($dokumen->getResultArray() as $d) : ?>
                                 <tr>
                                     <th scope="row"><?= $i++; ?></th>
                                     <td><?= $d['nama_file']; ?></td>
-                                    <td><?= $d['kategori']; ?></td>
+                                    <td><?= $d['nama_kategori']; ?></td>
                                     <td><?= $d['tanggal']; ?></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-warning btn-edit" data-id="<?= $d['id']; ?>" data-nama="<?= $d['nama_file']; ?>" data-file="<?= $d['file']; ?>" data-slug="<?= $d['slug']; ?>" data-file="<?= $d['file']; ?>" data-tanggal="<?= $d['tanggal']; ?>"><i class="far fa-edit"></i></a>
-                                        <form action="<?= base_url(); ?>/administrator/dokumen/<?= $d['id']; ?>" class="d-inline" method="post">
+                                    <td style="width: 25%;">
+                                        <a href="#" class="btn btn-sm btn-warning btn-edit d-inline" data-id="<?= $d['dokumenId']; ?>" data-nama="<?= $d['nama_file']; ?>" data-file="<?= $d['nama_file']; ?>" data-slug="<?= $d['slug']; ?>" data-file="<?= $d['nama_file']; ?>" data-tanggal="<?= $d['tanggal']; ?>" data-kategori="<?= $d['nama_kategori']; ?>"><i class="far fa-edit"></i></a>
+                                        <form action="<?= base_url(); ?>/administrator/dokumen/<?= $d['dokumenId']; ?>" class="d-inline" method="post">
                                             <?= csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <button type="submit" class="btn btn-sm btn-danger my-2" onclick="return confirm('Hapus dokumen ini ?')"><i class="far fa-trash-alt"></i></button>
+                                            <button type="submit" class="btn btn-sm btn-danger my-2 d-inline" onclick="return confirm('Hapus dokumen ini ?')"><i class="far fa-trash-alt"></i></button>
                                         </form>
-                                        <a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['slug']; ?>" class="btn btn-sm btn-info"><i class="fas fa-download"></i></a>
+                                        <a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['slug']; ?>" class="btn btn-sm btn-info d-inline"><i class="fas fa-download"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

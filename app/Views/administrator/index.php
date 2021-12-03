@@ -94,12 +94,12 @@
                             </thead>
                             <tbody>
                                 <?php $i = 1;
-                                foreach ($dokumen as $d) : ?>
+                                foreach ($dokumen->getResultArray() as $d) : ?>
                                     <tr>
                                         <th scope="row"><?= $i++; ?></th>
                                         <td><?= $d['nama_file']; ?></td>
                                         <td><?= $d['tanggal']; ?></td>
-                                        <td><?= $d['tanggal']; ?></td>
+                                        <td><?= $d['nama_kategori']; ?></td>
                                         <td><a href="<?= base_url(); ?>/dokumen/download_file/<?= $d['slug']; ?>"><i class="fas fa-download text-gray-600"></i></a></td>
                                     </tr>
                                 <?php endforeach; ?>
