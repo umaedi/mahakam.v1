@@ -376,21 +376,21 @@ class Administrator extends BaseController
         } else {
             $img_name_bupati = $img_bupati->getRandomName();
             $img_bupati->move('assets/img/banner', $img_name_bupati);
-            // unlink('assets/img/banner/' . $this->request->getVar('imgLama'));
+            unlink('assets/img/banner/' . $this->request->getVar('imgLama1'));
         }
         if ($img_wakil->getError() == 4) {
             $img_name_wakil = $this->request->getVar('imgLama2');
         } else {
             $img_name_wakil = $img_wakil->getRandomName();
             $img_wakil->move('assets/img/banner', $img_name_wakil);
-            // unlink('assets/img/banner/' . $this->request->getVar('imgLama'));
+            unlink('assets/img/banner/' . $this->request->getVar('imgLama2'));
         }
         if ($img_utama->getError() == 4) {
             $img_banner = $this->request->getVar('imgLama3');
         } else {
             $img_banner = $img_utama->getRandomName();
             $img_utama->move('assets/img/banner', $img_banner);
-            // unlink('assets/img/banner/' . $this->request->getVar('imgLama'));
+            unlink('assets/img/banner/' . $this->request->getVar('imgLama3'));
         }
 
 
