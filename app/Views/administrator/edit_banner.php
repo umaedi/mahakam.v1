@@ -12,7 +12,7 @@
                     <div class="card-header">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h1 class="h3 mb-0 text-gray-800">Banner bupati</h1>
-                            <a href="<?= base_url(); ?>/administrator/banner" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url(); ?>/administrator/general_settings" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -47,7 +47,7 @@
                     <div class="card-header">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h1 class="h3 mb-0 text-gray-800">Banner wakil bupati</h1>
-                            <a href="<?= base_url(); ?>/administrator/banner" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url(); ?>/administrator/general_settings" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -82,7 +82,7 @@
                     <div class="card-header">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h1 class="h3 mb-0 text-gray-800">Banner utama</h1>
-                            <a href="<?= base_url(); ?>/administrator/banner" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
+                            <a href="<?= base_url(); ?>/administrator/general_settings" class="d-none d-sm-inline-block btn btn-sm btn-info"><i class="fas fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
                     <div class="card-body">
